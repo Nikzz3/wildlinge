@@ -1,0 +1,88 @@
+/**
+ * Pfad 3: Seewil → Glimmerhöhle. Along the lake shore, over the river, up two rocky terraces (ledges as
+ * shortcuts back down) to the cave mouth in the cliffs. See docs/WORLD.md "AREA 3".
+ */
+import type { MapDef } from '../../core/contracts';
+import { ENCOUNTERS } from '../../data/encounters';
+import { caveWarp, MOUTHS } from './doors';
+
+export const PFAD_3: MapDef = {
+  id: 'pfad_3',
+  name: 'Pfad 3',
+  kind: 'route',
+  music: 'route',
+  battleBg: 'grass',
+  border: 'tree',
+  tiles: [
+    'TTTTTTTMMMMMMMTTTTTT',
+    'TTTTTTMMMMEMMMMTTTTT',
+    'TTTo.MMMM:::MMM.o.TT',
+    'TT..o....:::.S..*.TT',
+    'TT.,,,...:::::::..TT',
+    'TT,,,,,..o...:::.oTT',
+    'TTvvvvvvvvvvv:::vvTT',
+    'TT.....o.....:::..TT',
+    'TT,,,......o.:::.,TT',
+    'TT,,,:::::::::::.,TT',
+    'TT,,::::::::::::.,TT',
+    'TT..:::....o...,,,TT',
+    'TT..:::..*.....,,,TT',
+    'TTo.:::vvvvvvvvvvvTT',
+    'TT..:::...,,,,,..TTT',
+    'TT..:::..,,,,,,,..TT',
+    'T...:::..,,,,,,,o.TT',
+    'T...:::...,,,,,...TT',
+    'TT..::::::::::...*TT',
+    'TT...:::::::::...TTT',
+    'TTT.*....:::..o..TTT',
+    'TT,,,....:::s..,,,TT',
+    '~~~~~~~~~===~~~~~~~~',
+    '~~~~~~~~~===~~~~~~~~',
+    'TT.,,,...:::s~~~~~~~',
+    'T..,,,,..:::ss~~~~~~',
+    'T.,,,,::::::.s~~~~~~',
+    'TT.,,,::::::.s~~~~~~',
+    'TT..*.:::....s~~~~~~',
+    'TTT...:::.o..ss~~~~~',
+    'TT,,..:::.....s~~~~~',
+    'T.,,,.:::..*..s~~~~~',
+    'T.,,,,:::.....ss~~~~',
+    'TT,,,.:::..T...s~~~~',
+    'TT.,,.:::.TT..ss~~~~',
+    'TT....::::::.ss~~~~~',
+    'TT....::::::s~~~~~~~',
+    'TT.*.o...:::ss~~~~~~',
+    'TTT......:::.s,~~~~~',
+    'TT..*....:::.s,,~~~~',
+    'TT...o..S:::..s,~~~~',
+    'TTT......:::..s~~~~T',
+    'TTTT.....:::.ss~~~TT',
+    'TTTTTTTTT:::TTTTTTTT',
+  ],
+  warps: [caveWarp(MOUTHS.pfad3, 'glimmerhoehle_1', MOUTHS.g1Entrance)],
+  connections: { down: { map: 'seewil', offset: 3 } },
+  npcs: [
+    {
+      id: 'hiker', x: 16, y: 7, facing: 'left', sprite: 'hiker',
+      text: 'Die Höhle ist ein Labyrinth. Aber keine Sorge –\fes gibt nur einen Weg nach drüben.',
+    },
+    { id: 'pfad3_beat', x: 12, y: 36, facing: 'left', sprite: 'fisher', trainer: { id: 'pfad3_beat', sight: 3 } },
+    { id: 'pfad3_heidi', x: 12, y: 21, facing: 'left', sprite: 'woman', trainer: { id: 'pfad3_heidi', sight: 4 } },
+    { id: 'pfad3_nora', x: 2, y: 17, facing: 'right', sprite: 'girl', trainer: { id: 'pfad3_nora', sight: 4 } },
+    { id: 'pfad3_toni', x: 9, y: 8, facing: 'down', sprite: 'hiker', trainer: { id: 'pfad3_toni', sight: 4 } },
+    { id: 'pfad3_emil', x: 8, y: 3, facing: 'right', sprite: 'scientist', trainer: { id: 'pfad3_emil', sight: 3 } },
+  ],
+  signs: [
+    { x: 8, y: 40, text: 'PFAD 3\nSüden: Seewil / Norden: Glimmerhöhle' },
+    { x: 13, y: 3, text: 'GLIMMERHÖHLE\nDurchgang nach Funkenstadt. Vorsicht, Steinschlag!' },
+  ],
+  items: [
+    { x: 2, y: 3, item: 'super_potion', flag: 'item:pfad_3:super_potion' },
+    { x: 17, y: 15, item: 'crystal_great', flag: 'item:pfad_3:crystal_great' },
+  ],
+  hiddenItems: [
+    { x: 5, y: 37, item: 'burn_salve', flag: 'hidden:pfad_3:burn_salve' },
+    { x: 16, y: 2, item: 'candy', flag: 'hidden:pfad_3:candy' },
+  ],
+  encounters: ENCOUNTERS['pfad_3'],
+};
