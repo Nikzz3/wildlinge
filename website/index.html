@@ -23,8 +23,9 @@
         <a href="#partner">Partner</a>
         <a href="#bilder">Bilder</a>
         <a href="#steuerung">Steuerung</a>
-        <a href="handbuch.html">Handbuch</a>
-        <a class="nav__cta" href="#download">Download</a>
+        <a href="#typen">Typen</a>
+        <a href="#lexikon">Lexikon</a>
+        <a class="nav__cta" href="#download">Herunterladen</a>
       </div>
     </nav>
 
@@ -36,7 +37,7 @@
         <h1 class="logo">WILDLINGE</h1>
         <p class="subtitle">✦ Alpenglühen ✦</p>
         <p class="lead">
-          Ein Monster-Sammel-Rollenspiel im Stil der Handheld-Klassiker. Fang Wildlinge im hohen Gras,
+          Ein Monster-Sammel-Rollenspiel im Stil der Taschenkonsolen-Klassiker. Fang Wildlinge im hohen Gras,
           hol dir vier Abzeichen und stell dich auf dem Gipfelhorn dem <strong>Frostmantel</strong>,
           bevor er die Alpenglut löscht.
         </p>
@@ -55,7 +56,7 @@
         </div>
         <div class="handheld__controls" aria-hidden="true">
           <div class="dpad"><span></span></div>
-          <div class="handheld__label">PRESS START</div>
+          <div class="handheld__label">START DRÜCKEN</div>
           <div class="ab"><span>B</span><span>A</span></div>
         </div>
       </div>
@@ -67,10 +68,10 @@
     <main>
       <!-- STATS -->
       <section class="stats" id="welt">
-        <a class="stat" href="handbuch.html#lexikon"><span class="stat__num">44</span><span class="stat__label">Wildlinge zum Fangen</span></a>
+        <a class="stat" href="#lexikon"><span class="stat__num">44</span><span class="stat__label">Wildlinge zum Fangen</span></a>
         <div class="stat"><span class="stat__num">4</span><span class="stat__label">Hallen &amp; Abzeichen</span></div>
         <div class="stat"><span class="stat__num">~2h</span><span class="stat__label">Abenteuer bis zum Gipfel</span></div>
-        <div class="stat"><span class="stat__num">8-Bit</span><span class="stat__label">Chiptune-Soundtrack</span></div>
+        <div class="stat"><span class="stat__num">8-Bit</span><span class="stat__label">Chiptune-Musik</span></div>
       </section>
 
       <!-- STORY / CHAPTERS -->
@@ -120,7 +121,7 @@
           <p id="dialog-text">Professorin Arven: „Jeder Partner spielt sich anders. Na, wen nimmst du?“</p>
           <span class="dialog__arrow" aria-hidden="true">▼</span>
         </div>
-        <p class="section__more"><a href="handbuch.html#lexikon">Alle 44 Wildlinge &amp; die Typentabelle im Handbuch →</a></p>
+        <p class="section__more"><a href="#lexikon">Alle 44 Wildlinge im Lexikon →</a> · <a href="#typen">Typentabelle →</a></p>
       </section>
 
       <!-- SCREENSHOTS -->
@@ -137,23 +138,23 @@
 
       <!-- DOWNLOAD -->
       <section class="section download" id="download">
-        <h2 class="section__title"><span>Download</span></h2>
+        <h2 class="section__title"><span>Herunterladen</span></h2>
         <p class="download__intro">
-          Kostenlos, ohne Konto, ohne Werbung. Immer die <strong data-version>neueste Version</strong> – direkt aus dem Build.
+          Kostenlos, ohne Konto, ohne Werbung. Immer die <strong data-version>neueste Version</strong> – frisch gebaut.
         </p>
         <div class="platforms">
           <article class="platform" data-os="windows">
             <div class="platform__icon" aria-hidden="true">⊞</div>
             <h3>Windows</h3>
             <p class="platform__sub">Windows 10 / 11 · 64-Bit</p>
-            <a class="btn btn--primary btn--block" data-asset="Wildlinge-windows-x64.zip">Download .zip</a>
+            <a class="btn btn--primary btn--block" data-asset="Wildlinge-windows-x64.zip">.zip herunterladen</a>
             <p class="platform__hint">Entpacken und <code>wildlinge.exe</code> starten. Bei „Der Computer wurde durch Windows geschützt“: <em>Weitere Informationen → Trotzdem ausführen</em>.</p>
           </article>
           <article class="platform" data-os="mac">
             <div class="platform__icon" aria-hidden="true">⌘</div>
             <h3>macOS</h3>
             <p class="platform__sub">Apple Silicon (M1 und neuer)</p>
-            <a class="btn btn--primary btn--block" data-asset="Wildlinge-macos-arm64.zip">Download .zip</a>
+            <a class="btn btn--primary btn--block" data-asset="Wildlinge-macos-arm64.zip">.zip herunterladen</a>
             <a class="platform__alt" data-asset="Wildlinge-macos-x64.zip">Intel-Mac? Hier entlang</a>
             <p class="platform__hint">Entpacken, <code>Wildlinge.app</code> in „Programme“ ziehen. Beim ersten Start: <em>Rechtsklick → Öffnen</em> (oder Systemeinstellungen → Datenschutz &amp; Sicherheit → „Dennoch öffnen“).</p>
           </article>
@@ -161,7 +162,7 @@
             <div class="platform__icon" aria-hidden="true">$_</div>
             <h3>Linux</h3>
             <p class="platform__sub">x86-64</p>
-            <a class="btn btn--primary btn--block" data-asset="Wildlinge-linux-x64.tar.gz">Download .tar.gz</a>
+            <a class="btn btn--primary btn--block" data-asset="Wildlinge-linux-x64.tar.gz">.tar.gz herunterladen</a>
             <p class="platform__hint">Entpacken mit <code>tar xzf Wildlinge-linux-x64.tar.gz</code>, dann <code>./wildlinge</code> im Ordner starten.</p>
           </article>
           <article class="platform platform--browser">
@@ -184,8 +185,536 @@
           <div class="control"><span class="keys"><kbd>↑</kbd><kbd>←</kbd><kbd>↓</kbd><kbd>→</kbd> / <kbd>W</kbd><kbd>A</kbd><kbd>S</kbd><kbd>D</kbd></span><span>Bewegen, Cursor</span></div>
           <div class="control"><span class="keys"><kbd>Z</kbd><kbd>Y</kbd><kbd>Leertaste</kbd><kbd>J</kbd></span><span><b class="pad pad--a">A</b> Bestätigen, sprechen</span></div>
           <div class="control"><span class="keys"><kbd>X</kbd><kbd>Rück</kbd><kbd>K</kbd><kbd>Esc</kbd></span><span><b class="pad pad--b">B</b> Abbrechen · halten = rennen</span></div>
-          <div class="control"><span class="keys"><kbd>Enter</kbd></span><span><b class="pad">START</b> Menü</span></div>
-          <div class="control"><span class="keys"><kbd>Shift</kbd><kbd>Tab</kbd></span><span><b class="pad">SELECT</b></span></div>
+          <div class="control"><span class="keys"><kbd>Eingabe</kbd></span><span><b class="pad">START</b> Menü</span></div>
+          <div class="control"><span class="keys"><kbd>Umschalt</kbd><kbd>Tab</kbd></span><span><b class="pad">SELECT</b> Auswahl</span></div>
+        </div>
+      </section>
+
+      <!-- TYPE CHART -->
+      <section class="section" id="typen">
+        <h2 class="section__title"><span>Typentabelle</span></h2>
+        <p class="section__intro">Was gegen was stark ist: Angriff in der Zeile, Verteidiger in der Spalte.</p>
+<div class="chart"><table class="chart__table">
+<thead><tr><th class="chart__corner">Angriff ↓<br>Ziel →</th><th><span class="type type--normal" title="Normal">Nor</span></th><th><span class="type type--fire" title="Feuer">Feu</span></th><th><span class="type type--water" title="Wasser">Was</span></th><th><span class="type type--plant" title="Pflanze">Pfl</span></th><th><span class="type type--spark" title="Blitz">Bli</span></th><th><span class="type type--earth" title="Erde">Erd</span></th><th><span class="type type--wind" title="Wind">Win</span></th><th><span class="type type--frost" title="Frost">Fro</span></th><th><span class="type type--toxic" title="Gift">Gif</span></th><th><span class="type type--spirit" title="Geist">Gei</span></th><th><span class="type type--metal" title="Metall">Met</span></th><th><span class="type type--light" title="Licht">Lic</span></th></tr></thead>
+<tbody>
+<tr><th><span class="type type--normal" title="Normal">Normal</span></th><td title="Normal → Normal: 1×"></td><td title="Normal → Feuer: 1×"></td><td title="Normal → Wasser: 1×"></td><td title="Normal → Pflanze: 1×"></td><td title="Normal → Blitz: 1×"></td><td title="Normal → Erde: 1×"></td><td title="Normal → Wind: 1×"></td><td class="eff-s" title="Normal → Frost: 2×">2×</td><td title="Normal → Gift: 1×"></td><td class="eff-w" title="Normal → Geist: 0.5×">½</td><td class="eff-w" title="Normal → Metall: 0.5×">½</td><td class="eff-s" title="Normal → Licht: 2×">2×</td></tr>
+<tr><th><span class="type type--fire" title="Feuer">Feuer</span></th><td title="Feuer → Normal: 1×"></td><td class="eff-w" title="Feuer → Feuer: 0.5×">½</td><td class="eff-w" title="Feuer → Wasser: 0.5×">½</td><td class="eff-s" title="Feuer → Pflanze: 2×">2×</td><td title="Feuer → Blitz: 1×"></td><td class="eff-w" title="Feuer → Erde: 0.5×">½</td><td title="Feuer → Wind: 1×"></td><td class="eff-s" title="Feuer → Frost: 2×">2×</td><td title="Feuer → Gift: 1×"></td><td title="Feuer → Geist: 1×"></td><td class="eff-s" title="Feuer → Metall: 2×">2×</td><td title="Feuer → Licht: 1×"></td></tr>
+<tr><th><span class="type type--water" title="Wasser">Wasser</span></th><td title="Wasser → Normal: 1×"></td><td class="eff-s" title="Wasser → Feuer: 2×">2×</td><td class="eff-w" title="Wasser → Wasser: 0.5×">½</td><td class="eff-w" title="Wasser → Pflanze: 0.5×">½</td><td title="Wasser → Blitz: 1×"></td><td class="eff-s" title="Wasser → Erde: 2×">2×</td><td title="Wasser → Wind: 1×"></td><td class="eff-w" title="Wasser → Frost: 0.5×">½</td><td title="Wasser → Gift: 1×"></td><td title="Wasser → Geist: 1×"></td><td class="eff-s" title="Wasser → Metall: 2×">2×</td><td title="Wasser → Licht: 1×"></td></tr>
+<tr><th><span class="type type--plant" title="Pflanze">Pflanze</span></th><td title="Pflanze → Normal: 1×"></td><td class="eff-w" title="Pflanze → Feuer: 0.5×">½</td><td class="eff-s" title="Pflanze → Wasser: 2×">2×</td><td title="Pflanze → Pflanze: 1×"></td><td title="Pflanze → Blitz: 1×"></td><td class="eff-s" title="Pflanze → Erde: 2×">2×</td><td class="eff-w" title="Pflanze → Wind: 0.5×">½</td><td title="Pflanze → Frost: 1×"></td><td class="eff-w" title="Pflanze → Gift: 0.5×">½</td><td title="Pflanze → Geist: 1×"></td><td title="Pflanze → Metall: 1×"></td><td class="eff-s" title="Pflanze → Licht: 2×">2×</td></tr>
+<tr><th><span class="type type--spark" title="Blitz">Blitz</span></th><td title="Blitz → Normal: 1×"></td><td title="Blitz → Feuer: 1×"></td><td class="eff-s" title="Blitz → Wasser: 2×">2×</td><td class="eff-w" title="Blitz → Pflanze: 0.5×">½</td><td class="eff-w" title="Blitz → Blitz: 0.5×">½</td><td class="eff-z" title="Blitz → Erde: 0×">0</td><td class="eff-s" title="Blitz → Wind: 2×">2×</td><td title="Blitz → Frost: 1×"></td><td title="Blitz → Gift: 1×"></td><td title="Blitz → Geist: 1×"></td><td class="eff-s" title="Blitz → Metall: 2×">2×</td><td title="Blitz → Licht: 1×"></td></tr>
+<tr><th><span class="type type--earth" title="Erde">Erde</span></th><td title="Erde → Normal: 1×"></td><td class="eff-s" title="Erde → Feuer: 2×">2×</td><td title="Erde → Wasser: 1×"></td><td class="eff-w" title="Erde → Pflanze: 0.5×">½</td><td class="eff-s" title="Erde → Blitz: 2×">2×</td><td title="Erde → Erde: 1×"></td><td class="eff-z" title="Erde → Wind: 0×">0</td><td title="Erde → Frost: 1×"></td><td class="eff-s" title="Erde → Gift: 2×">2×</td><td class="eff-w" title="Erde → Geist: 0.5×">½</td><td title="Erde → Metall: 1×"></td><td title="Erde → Licht: 1×"></td></tr>
+<tr><th><span class="type type--wind" title="Wind">Wind</span></th><td title="Wind → Normal: 1×"></td><td class="eff-s" title="Wind → Feuer: 2×">2×</td><td title="Wind → Wasser: 1×"></td><td class="eff-s" title="Wind → Pflanze: 2×">2×</td><td class="eff-w" title="Wind → Blitz: 0.5×">½</td><td class="eff-w" title="Wind → Erde: 0.5×">½</td><td title="Wind → Wind: 1×"></td><td class="eff-w" title="Wind → Frost: 0.5×">½</td><td title="Wind → Gift: 1×"></td><td title="Wind → Geist: 1×"></td><td title="Wind → Metall: 1×"></td><td title="Wind → Licht: 1×"></td></tr>
+<tr><th><span class="type type--frost" title="Frost">Frost</span></th><td class="eff-w" title="Frost → Normal: 0.5×">½</td><td class="eff-w" title="Frost → Feuer: 0.5×">½</td><td class="eff-s" title="Frost → Wasser: 2×">2×</td><td title="Frost → Pflanze: 1×"></td><td title="Frost → Blitz: 1×"></td><td class="eff-s" title="Frost → Erde: 2×">2×</td><td class="eff-s" title="Frost → Wind: 2×">2×</td><td class="eff-w" title="Frost → Frost: 0.5×">½</td><td title="Frost → Gift: 1×"></td><td title="Frost → Geist: 1×"></td><td title="Frost → Metall: 1×"></td><td title="Frost → Licht: 1×"></td></tr>
+<tr><th><span class="type type--toxic" title="Gift">Gift</span></th><td class="eff-s" title="Gift → Normal: 2×">2×</td><td title="Gift → Feuer: 1×"></td><td title="Gift → Wasser: 1×"></td><td class="eff-s" title="Gift → Pflanze: 2×">2×</td><td title="Gift → Blitz: 1×"></td><td class="eff-w" title="Gift → Erde: 0.5×">½</td><td title="Gift → Wind: 1×"></td><td title="Gift → Frost: 1×"></td><td class="eff-w" title="Gift → Gift: 0.5×">½</td><td class="eff-z" title="Gift → Geist: 0×">0</td><td title="Gift → Metall: 1×"></td><td class="eff-s" title="Gift → Licht: 2×">2×</td></tr>
+<tr><th><span class="type type--spirit" title="Geist">Geist</span></th><td class="eff-s" title="Geist → Normal: 2×">2×</td><td title="Geist → Feuer: 1×"></td><td title="Geist → Wasser: 1×"></td><td title="Geist → Pflanze: 1×"></td><td title="Geist → Blitz: 1×"></td><td title="Geist → Erde: 1×"></td><td title="Geist → Wind: 1×"></td><td title="Geist → Frost: 1×"></td><td title="Geist → Gift: 1×"></td><td class="eff-s" title="Geist → Geist: 2×">2×</td><td class="eff-w" title="Geist → Metall: 0.5×">½</td><td class="eff-w" title="Geist → Licht: 0.5×">½</td></tr>
+<tr><th><span class="type type--metal" title="Metall">Metall</span></th><td title="Metall → Normal: 1×"></td><td class="eff-w" title="Metall → Feuer: 0.5×">½</td><td class="eff-w" title="Metall → Wasser: 0.5×">½</td><td title="Metall → Pflanze: 1×"></td><td class="eff-s" title="Metall → Blitz: 2×">2×</td><td title="Metall → Erde: 1×"></td><td title="Metall → Wind: 1×"></td><td class="eff-s" title="Metall → Frost: 2×">2×</td><td title="Metall → Gift: 1×"></td><td class="eff-s" title="Metall → Geist: 2×">2×</td><td class="eff-w" title="Metall → Metall: 0.5×">½</td><td title="Metall → Licht: 1×"></td></tr>
+<tr><th><span class="type type--light" title="Licht">Licht</span></th><td title="Licht → Normal: 1×"></td><td title="Licht → Feuer: 1×"></td><td title="Licht → Wasser: 1×"></td><td class="eff-w" title="Licht → Pflanze: 0.5×">½</td><td title="Licht → Blitz: 1×"></td><td title="Licht → Erde: 1×"></td><td title="Licht → Wind: 1×"></td><td title="Licht → Frost: 1×"></td><td class="eff-s" title="Licht → Gift: 2×">2×</td><td class="eff-s" title="Licht → Geist: 2×">2×</td><td title="Licht → Metall: 1×"></td><td class="eff-w" title="Licht → Licht: 0.5×">½</td></tr>
+</tbody></table></div>
+        <p class="chart__legend"><b class="eff-s">2×</b> sehr effektiv · <b class="eff-w">½</b> nicht sehr effektiv · <b class="eff-z">0</b> keine Wirkung · leer = normal (1×)<br />
+          Bei zwei Typen werden die Faktoren multipliziert (z.&nbsp;B. 2 × 2 = 4×, 2 × ½ = 1×, alles mit 0 = 0).</p>
+      </section>
+
+      <!-- LEXIKON -->
+      <section class="section" id="lexikon">
+        <h2 class="section__title"><span>Lexikon</span></h2>
+        <p class="section__intro">Alle 44 Wildlinge aus Alvenland. Suche nach Name, Nummer oder Typ – oder tippe Typen an, um zu filtern.</p>
+        <div class="dex-filter">
+          <input id="dex-q" type="search" placeholder="z.B. Sprössli, 12, Frost …" aria-label="Wildlinge durchsuchen" />
+          <span class="dex-filter__count" id="dex-count" aria-live="polite"></span>
+          <div class="dex-filter__types"><button type="button" data-t="normal"><span class="type type--normal" title="Normal">Normal</span></button><button type="button" data-t="fire"><span class="type type--fire" title="Feuer">Feuer</span></button><button type="button" data-t="water"><span class="type type--water" title="Wasser">Wasser</span></button><button type="button" data-t="plant"><span class="type type--plant" title="Pflanze">Pflanze</span></button><button type="button" data-t="spark"><span class="type type--spark" title="Blitz">Blitz</span></button><button type="button" data-t="earth"><span class="type type--earth" title="Erde">Erde</span></button><button type="button" data-t="wind"><span class="type type--wind" title="Wind">Wind</span></button><button type="button" data-t="frost"><span class="type type--frost" title="Frost">Frost</span></button><button type="button" data-t="toxic"><span class="type type--toxic" title="Gift">Gift</span></button><button type="button" data-t="spirit"><span class="type type--spirit" title="Geist">Geist</span></button><button type="button" data-t="metal"><span class="type type--metal" title="Metall">Metall</span></button><button type="button" data-t="light"><span class="type type--light" title="Licht">Licht</span></button></div>
+        </div>
+        <div class="dex" id="dex">
+<article class="mon" data-q="1 sprössli pflanze spross-wildling" data-types="plant">
+<header class="mon__head"><span class="mon__no">#001</span><h3>Sprössli</h3><span class="type type--plant" title="Pflanze">Pflanze</span></header>
+<div class="mon__body"><img src="assets/dex/001.png" width="96" height="96" alt="Sprössli" loading="lazy" /><div>
+<p class="mon__cat">Spross-Wildling · 0,4 m · 7,5 kg</p>
+<p class="mon__txt">Ein Dachsjunges, dem statt Streifen zwei Grashalme über den Kopf wachsen. In der Sonne werden sie länger.</p>
+<p class="mon__evo">→ Moosdachs (Lv 16)</p>
+<p class="mon__hab">📍 Starter aus dem Labor von Professorin Arven in Moosbach (nicht in freier Wildbahn)</p></div></div>
+<ul class="mon__stats"><li><span>KP</span><b>50</b><i style="--v:50"></i></li><li><span>Ang</span><b>48</b><i style="--v:48"></i></li><li><span>Vert</span><b>52</b><i style="--v:52"></i></li><li><span>Mag</span><b>56</b><i style="--v:56"></i></li><li><span>Res</span><b>56</b><i style="--v:56"></i></li><li><span>Init</span><b>46</b><i style="--v:46"></i></li></ul>
+<p class="mon__tot">Summe 308 · Fangrate 45</p>
+<p class="mon__weak"><span>Schwach gegen</span> <span class="type type--fire" title="Feuer">Feuer</span> <span class="type type--wind" title="Wind">Wind</span> <span class="type type--toxic" title="Gift">Gift</span></p>
+</article>
+<article class="mon" data-q="2 moosdachs pflanze moos-wildling" data-types="plant">
+<header class="mon__head"><span class="mon__no">#002</span><h3>Moosdachs</h3><span class="type type--plant" title="Pflanze">Pflanze</span></header>
+<div class="mon__body"><img src="assets/dex/002.png" width="96" height="96" alt="Moosdachs" loading="lazy" /><div>
+<p class="mon__cat">Moos-Wildling · 0,9 m · 24 kg</p>
+<p class="mon__txt">In seinen Rückenstreifen wächst dichtes Moos. Er gräbt Gänge unter Waldwiesen und lockert so den Boden.</p>
+<p class="mon__evo">← Sprössli (Lv 16) · → Dornachs (Lv 34)</p>
+<p class="mon__hab">📍 Nur über den Starter</p></div></div>
+<ul class="mon__stats"><li><span>KP</span><b>66</b><i style="--v:66"></i></li><li><span>Ang</span><b>64</b><i style="--v:64"></i></li><li><span>Vert</span><b>70</b><i style="--v:70"></i></li><li><span>Mag</span><b>76</b><i style="--v:76"></i></li><li><span>Res</span><b>74</b><i style="--v:74"></i></li><li><span>Init</span><b>64</b><i style="--v:64"></i></li></ul>
+<p class="mon__tot">Summe 414 · Fangrate 45</p>
+<p class="mon__weak"><span>Schwach gegen</span> <span class="type type--fire" title="Feuer">Feuer</span> <span class="type type--wind" title="Wind">Wind</span> <span class="type type--toxic" title="Gift">Gift</span></p>
+</article>
+<article class="mon" data-q="3 dornachs pflanze gift nessel-wildling" data-types="plant toxic">
+<header class="mon__head"><span class="mon__no">#003</span><h3>Dornachs</h3><span class="type type--plant" title="Pflanze">Pflanze</span><span class="type type--toxic" title="Gift">Gift</span></header>
+<div class="mon__body"><img src="assets/dex/003.png" width="96" height="96" alt="Dornachs" loading="lazy" /><div>
+<p class="mon__cat">Nessel-Wildling · 1,3 m · 68 kg</p>
+<p class="mon__txt">Seine Mähne aus Nesseln und Dornen brennt bei Berührung. Er schützt die Wälder vor Eindringlingen.</p>
+<p class="mon__evo">← Moosdachs (Lv 34)</p>
+<p class="mon__hab">📍 Nur über den Starter</p></div></div>
+<ul class="mon__stats"><li><span>KP</span><b>82</b><i style="--v:82"></i></li><li><span>Ang</span><b>80</b><i style="--v:80"></i></li><li><span>Vert</span><b>86</b><i style="--v:86"></i></li><li><span>Mag</span><b>98</b><i style="--v:98"></i></li><li><span>Res</span><b>92</b><i style="--v:92"></i></li><li><span>Init</span><b>82</b><i style="--v:82"></i></li></ul>
+<p class="mon__tot">Summe 520 · Fangrate 45</p>
+<p class="mon__weak"><span>Schwach gegen</span> <span class="type type--fire" title="Feuer">Feuer</span> <span class="type type--wind" title="Wind">Wind</span></p>
+</article>
+<article class="mon" data-q="4 zündli feuer glutkitz-wildling" data-types="fire">
+<header class="mon__head"><span class="mon__no">#004</span><h3>Zündli</h3><span class="type type--fire" title="Feuer">Feuer</span></header>
+<div class="mon__body"><img src="assets/dex/004.png" width="96" height="96" alt="Zündli" loading="lazy" /><div>
+<p class="mon__cat">Glutkitz-Wildling · 0,4 m · 6,2 kg</p>
+<p class="mon__txt">Ein Steinbockkitz, dessen Hornknospen wie Zündholzköpfe glühen. Stampft es auf, sprühen Funken.</p>
+<p class="mon__evo">→ Glutbock (Lv 16)</p>
+<p class="mon__hab">📍 Starter aus dem Labor von Professorin Arven in Moosbach</p></div></div>
+<ul class="mon__stats"><li><span>KP</span><b>44</b><i style="--v:44"></i></li><li><span>Ang</span><b>56</b><i style="--v:56"></i></li><li><span>Vert</span><b>42</b><i style="--v:42"></i></li><li><span>Mag</span><b>58</b><i style="--v:58"></i></li><li><span>Res</span><b>46</b><i style="--v:46"></i></li><li><span>Init</span><b>62</b><i style="--v:62"></i></li></ul>
+<p class="mon__tot">Summe 308 · Fangrate 45</p>
+<p class="mon__weak"><span>Schwach gegen</span> <span class="type type--water" title="Wasser">Wasser</span> <span class="type type--earth" title="Erde">Erde</span> <span class="type type--wind" title="Wind">Wind</span></p>
+</article>
+<article class="mon" data-q="5 glutbock feuer kletter-wildling" data-types="fire">
+<header class="mon__head"><span class="mon__no">#005</span><h3>Glutbock</h3><span class="type type--fire" title="Feuer">Feuer</span></header>
+<div class="mon__body"><img src="assets/dex/005.png" width="96" height="96" alt="Glutbock" loading="lazy" /><div>
+<p class="mon__cat">Kletter-Wildling · 1 m · 38 kg</p>
+<p class="mon__txt">Seine Hörner glühen wie Kohlen. Er springt über steile Felsen und hinterlässt glimmende Hufspuren.</p>
+<p class="mon__evo">← Zündli (Lv 16) · → Brandhorn (Lv 34)</p>
+<p class="mon__hab">📍 Nur über den Starter</p></div></div>
+<ul class="mon__stats"><li><span>KP</span><b>60</b><i style="--v:60"></i></li><li><span>Ang</span><b>74</b><i style="--v:74"></i></li><li><span>Vert</span><b>58</b><i style="--v:58"></i></li><li><span>Mag</span><b>76</b><i style="--v:76"></i></li><li><span>Res</span><b>62</b><i style="--v:62"></i></li><li><span>Init</span><b>82</b><i style="--v:82"></i></li></ul>
+<p class="mon__tot">Summe 412 · Fangrate 45</p>
+<p class="mon__weak"><span>Schwach gegen</span> <span class="type type--water" title="Wasser">Wasser</span> <span class="type type--earth" title="Erde">Erde</span> <span class="type type--wind" title="Wind">Wind</span></p>
+</article>
+<article class="mon" data-q="6 brandhorn feuer erde lavahorn-wildling" data-types="fire earth">
+<header class="mon__head"><span class="mon__no">#006</span><h3>Brandhorn</h3><span class="type type--fire" title="Feuer">Feuer</span><span class="type type--earth" title="Erde">Erde</span></header>
+<div class="mon__body"><img src="assets/dex/006.png" width="96" height="96" alt="Brandhorn" loading="lazy" /><div>
+<p class="mon__cat">Lavahorn-Wildling · 1,6 m · 112 kg</p>
+<p class="mon__txt">Aus den Rissen seiner Felshaut quillt Glut. Ein Stoß seiner Hörner soll ganze Felswände spalten.</p>
+<p class="mon__evo">← Glutbock (Lv 34)</p>
+<p class="mon__hab">📍 Nur über den Starter</p></div></div>
+<ul class="mon__stats"><li><span>KP</span><b>80</b><i style="--v:80"></i></li><li><span>Ang</span><b>102</b><i style="--v:102"></i></li><li><span>Vert</span><b>80</b><i style="--v:80"></i></li><li><span>Mag</span><b>92</b><i style="--v:92"></i></li><li><span>Res</span><b>72</b><i style="--v:72"></i></li><li><span>Init</span><b>96</b><i style="--v:96"></i></li></ul>
+<p class="mon__tot">Summe 522 · Fangrate 45</p>
+<p class="mon__weak"><span>Schwach gegen</span> <span class="type type--water" title="Wasser">Wasser 4×</span> <span class="type type--earth" title="Erde">Erde</span></p>
+<p class="mon__weak"><span>Immun gegen</span> <span class="type type--spark" title="Blitz">Blitz</span></p>
+</article>
+<article class="mon" data-q="7 biberli wasser bach-wildling" data-types="water">
+<header class="mon__head"><span class="mon__no">#007</span><h3>Biberli</h3><span class="type type--water" title="Wasser">Wasser</span></header>
+<div class="mon__body"><img src="assets/dex/007.png" width="96" height="96" alt="Biberli" loading="lazy" /><div>
+<p class="mon__cat">Bach-Wildling · 0,4 m · 8 kg</p>
+<p class="mon__txt">Es baut kleine Dämme aus Zweigen. Wittert es Gefahr, klatscht sein flacher Schwanz laut aufs Wasser.</p>
+<p class="mon__evo">→ Bachbiber (Lv 16)</p>
+<p class="mon__hab">📍 Starter aus dem Labor von Professorin Arven in Moosbach</p></div></div>
+<ul class="mon__stats"><li><span>KP</span><b>52</b><i style="--v:52"></i></li><li><span>Ang</span><b>52</b><i style="--v:52"></i></li><li><span>Vert</span><b>56</b><i style="--v:56"></i></li><li><span>Mag</span><b>48</b><i style="--v:48"></i></li><li><span>Res</span><b>52</b><i style="--v:52"></i></li><li><span>Init</span><b>46</b><i style="--v:46"></i></li></ul>
+<p class="mon__tot">Summe 306 · Fangrate 45</p>
+<p class="mon__weak"><span>Schwach gegen</span> <span class="type type--plant" title="Pflanze">Pflanze</span> <span class="type type--spark" title="Blitz">Blitz</span> <span class="type type--frost" title="Frost">Frost</span></p>
+</article>
+<article class="mon" data-q="8 bachbiber wasser damm-wildling" data-types="water">
+<header class="mon__head"><span class="mon__no">#008</span><h3>Bachbiber</h3><span class="type type--water" title="Wasser">Wasser</span></header>
+<div class="mon__body"><img src="assets/dex/008.png" width="96" height="96" alt="Bachbiber" loading="lazy" /><div>
+<p class="mon__cat">Damm-Wildling · 0,9 m · 29 kg</p>
+<p class="mon__txt">Mit seinen orangen Nagezähnen fällt es junge Bäume in Minuten. Seine Dämme trotzen jedem Hochwasser.</p>
+<p class="mon__evo">← Biberli (Lv 16) · → Dammbaron (Lv 34)</p>
+<p class="mon__hab">📍 Nur über den Starter</p></div></div>
+<ul class="mon__stats"><li><span>KP</span><b>70</b><i style="--v:70"></i></li><li><span>Ang</span><b>70</b><i style="--v:70"></i></li><li><span>Vert</span><b>76</b><i style="--v:76"></i></li><li><span>Mag</span><b>64</b><i style="--v:64"></i></li><li><span>Res</span><b>68</b><i style="--v:68"></i></li><li><span>Init</span><b>62</b><i style="--v:62"></i></li></ul>
+<p class="mon__tot">Summe 410 · Fangrate 45</p>
+<p class="mon__weak"><span>Schwach gegen</span> <span class="type type--plant" title="Pflanze">Pflanze</span> <span class="type type--spark" title="Blitz">Blitz</span> <span class="type type--frost" title="Frost">Frost</span></p>
+</article>
+<article class="mon" data-q="9 dammbaron wasser metall eisenzahn-wildling" data-types="water metal">
+<header class="mon__head"><span class="mon__no">#009</span><h3>Dammbaron</h3><span class="type type--water" title="Wasser">Wasser</span><span class="type type--metal" title="Metall">Metall</span></header>
+<div class="mon__body"><img src="assets/dex/009.png" width="96" height="96" alt="Dammbaron" loading="lazy" /><div>
+<p class="mon__cat">Eisenzahn-Wildling · 1,5 m · 120 kg</p>
+<p class="mon__txt">Zähne und Schwanz sind hart wie Stahl. Seine Dämme stauen ganze Seen auf und trotzen jedem Hochwasser.</p>
+<p class="mon__evo">← Bachbiber (Lv 34)</p>
+<p class="mon__hab">📍 Nur über den Starter</p></div></div>
+<ul class="mon__stats"><li><span>KP</span><b>95</b><i style="--v:95"></i></li><li><span>Ang</span><b>92</b><i style="--v:92"></i></li><li><span>Vert</span><b>100</b><i style="--v:100"></i></li><li><span>Mag</span><b>78</b><i style="--v:78"></i></li><li><span>Res</span><b>85</b><i style="--v:85"></i></li><li><span>Init</span><b>70</b><i style="--v:70"></i></li></ul>
+<p class="mon__tot">Summe 520 · Fangrate 45</p>
+<p class="mon__weak"><span>Schwach gegen</span> <span class="type type--spark" title="Blitz">Blitz 4×</span> <span class="type type--plant" title="Pflanze">Pflanze</span> <span class="type type--frost" title="Frost">Frost</span></p>
+</article>
+<article class="mon" data-q="10 zwitschli normal wind dohlen-wildling" data-types="normal wind">
+<header class="mon__head"><span class="mon__no">#010</span><h3>Zwitschli</h3><span class="type type--normal" title="Normal">Normal</span><span class="type type--wind" title="Wind">Wind</span></header>
+<div class="mon__body"><img src="assets/dex/010.png" width="96" height="96" alt="Zwitschli" loading="lazy" /><div>
+<p class="mon__cat">Dohlen-Wildling · 0,3 m · 1,8 kg</p>
+<p class="mon__txt">Zwitschli folgen Wanderern auf Schritt und Tritt und betteln um Krümel.</p>
+<p class="mon__evo">→ Dohlerich (Lv 18)</p>
+<p class="mon__hab">📍 Pfad 1, Pfad 2 (sehr häufig)</p></div></div>
+<ul class="mon__stats"><li><span>KP</span><b>45</b><i style="--v:45"></i></li><li><span>Ang</span><b>52</b><i style="--v:52"></i></li><li><span>Vert</span><b>42</b><i style="--v:42"></i></li><li><span>Mag</span><b>42</b><i style="--v:42"></i></li><li><span>Res</span><b>42</b><i style="--v:42"></i></li><li><span>Init</span><b>72</b><i style="--v:72"></i></li></ul>
+<p class="mon__tot">Summe 295 · Fangrate 255</p>
+<p class="mon__weak"><span>Schwach gegen</span> <span class="type type--spark" title="Blitz">Blitz</span> <span class="type type--toxic" title="Gift">Gift</span> <span class="type type--spirit" title="Geist">Geist</span></p>
+<p class="mon__weak"><span>Immun gegen</span> <span class="type type--earth" title="Erde">Erde</span></p>
+</article>
+<article class="mon" data-q="11 dohlerich normal wind bergvogel-wildling" data-types="normal wind">
+<header class="mon__head"><span class="mon__no">#011</span><h3>Dohlerich</h3><span class="type type--normal" title="Normal">Normal</span><span class="type type--wind" title="Wind">Wind</span></header>
+<div class="mon__body"><img src="assets/dex/011.png" width="96" height="96" alt="Dohlerich" loading="lazy" /><div>
+<p class="mon__cat">Bergvogel-Wildling · 0,7 m · 9,5 kg</p>
+<p class="mon__txt">Er segelt in Schwärmen um die Gipfel. Mit dem gelben Schnabel knackt er sogar Tannenzapfen.</p>
+<p class="mon__evo">← Zwitschli (Lv 18) · → Sturmdohle (Lv 32)</p>
+<p class="mon__hab">📍 Pfad 3, Pfad 4</p></div></div>
+<ul class="mon__stats"><li><span>KP</span><b>62</b><i style="--v:62"></i></li><li><span>Ang</span><b>72</b><i style="--v:72"></i></li><li><span>Vert</span><b>60</b><i style="--v:60"></i></li><li><span>Mag</span><b>56</b><i style="--v:56"></i></li><li><span>Res</span><b>58</b><i style="--v:58"></i></li><li><span>Init</span><b>94</b><i style="--v:94"></i></li></ul>
+<p class="mon__tot">Summe 402 · Fangrate 120</p>
+<p class="mon__weak"><span>Schwach gegen</span> <span class="type type--spark" title="Blitz">Blitz</span> <span class="type type--toxic" title="Gift">Gift</span> <span class="type type--spirit" title="Geist">Geist</span></p>
+<p class="mon__weak"><span>Immun gegen</span> <span class="type type--earth" title="Erde">Erde</span></p>
+</article>
+<article class="mon" data-q="12 sturmdohle normal wind sturm-wildling" data-types="normal wind">
+<header class="mon__head"><span class="mon__no">#012</span><h3>Sturmdohle</h3><span class="type type--normal" title="Normal">Normal</span><span class="type type--wind" title="Wind">Wind</span></header>
+<div class="mon__body"><img src="assets/dex/012.png" width="96" height="96" alt="Sturmdohle" loading="lazy" /><div>
+<p class="mon__cat">Sturm-Wildling · 1,4 m · 32 kg</p>
+<p class="mon__txt">Sie reitet auf Gewitterböen hoch über die Gipfel. Ihr Flügelschwung soll Tannen umknicken.</p>
+<p class="mon__evo">← Dohlerich (Lv 32)</p>
+<p class="mon__hab">📍 Gipfelpfad (sehr selten)</p></div></div>
+<ul class="mon__stats"><li><span>KP</span><b>80</b><i style="--v:80"></i></li><li><span>Ang</span><b>98</b><i style="--v:98"></i></li><li><span>Vert</span><b>76</b><i style="--v:76"></i></li><li><span>Mag</span><b>72</b><i style="--v:72"></i></li><li><span>Res</span><b>74</b><i style="--v:74"></i></li><li><span>Init</span><b>112</b><i style="--v:112"></i></li></ul>
+<p class="mon__tot">Summe 512 · Fangrate 45</p>
+<p class="mon__weak"><span>Schwach gegen</span> <span class="type type--spark" title="Blitz">Blitz</span> <span class="type type--toxic" title="Gift">Gift</span> <span class="type type--spirit" title="Geist">Geist</span></p>
+<p class="mon__weak"><span>Immun gegen</span> <span class="type type--earth" title="Erde">Erde</span></p>
+</article>
+<article class="mon" data-q="13 munggli normal murmel-wildling" data-types="normal">
+<header class="mon__head"><span class="mon__no">#013</span><h3>Munggli</h3><span class="type type--normal" title="Normal">Normal</span></header>
+<div class="mon__body"><img src="assets/dex/013.png" width="96" height="96" alt="Munggli" loading="lazy" /><div>
+<p class="mon__cat">Murmel-Wildling · 0,4 m · 4,5 kg</p>
+<p class="mon__txt">Munggli sonnen sich auf warmen Steinen. Ertönt ein Pfiff, flitzen alle blitzschnell in den Bau.</p>
+<p class="mon__evo">→ Pfiffmungg (Lv 20)</p>
+<p class="mon__hab">📍 Pfad 1, Pfad 2 (sehr häufig)</p></div></div>
+<ul class="mon__stats"><li><span>KP</span><b>52</b><i style="--v:52"></i></li><li><span>Ang</span><b>54</b><i style="--v:54"></i></li><li><span>Vert</span><b>46</b><i style="--v:46"></i></li><li><span>Mag</span><b>34</b><i style="--v:34"></i></li><li><span>Res</span><b>42</b><i style="--v:42"></i></li><li><span>Init</span><b>66</b><i style="--v:66"></i></li></ul>
+<p class="mon__tot">Summe 294 · Fangrate 255</p>
+<p class="mon__weak"><span>Schwach gegen</span> <span class="type type--toxic" title="Gift">Gift</span> <span class="type type--spirit" title="Geist">Geist</span></p>
+</article>
+<article class="mon" data-q="14 pfiffmungg normal pfeif-wildling" data-types="normal">
+<header class="mon__head"><span class="mon__no">#014</span><h3>Pfiffmungg</h3><span class="type type--normal" title="Normal">Normal</span></header>
+<div class="mon__body"><img src="assets/dex/014.png" width="96" height="96" alt="Pfiffmungg" loading="lazy" /><div>
+<p class="mon__cat">Pfeif-Wildling · 1 m · 26 kg</p>
+<p class="mon__txt">Sein Pfiff ist kilometerweit zu hören. Er wacht über große Kolonien und verteidigt sie mit Wucht.</p>
+<p class="mon__evo">← Munggli (Lv 20)</p>
+<p class="mon__hab">📍 Pfad 4 (sehr selten)</p></div></div>
+<ul class="mon__stats"><li><span>KP</span><b>74</b><i style="--v:74"></i></li><li><span>Ang</span><b>80</b><i style="--v:80"></i></li><li><span>Vert</span><b>62</b><i style="--v:62"></i></li><li><span>Mag</span><b>44</b><i style="--v:44"></i></li><li><span>Res</span><b>60</b><i style="--v:60"></i></li><li><span>Init</span><b>100</b><i style="--v:100"></i></li></ul>
+<p class="mon__tot">Summe 420 · Fangrate 45</p>
+<p class="mon__weak"><span>Schwach gegen</span> <span class="type type--toxic" title="Gift">Gift</span> <span class="type type--spirit" title="Geist">Geist</span></p>
+</article>
+<article class="mon" data-q="15 chäferli pflanze gift blattkäfer-wildling" data-types="plant toxic">
+<header class="mon__head"><span class="mon__no">#015</span><h3>Chäferli</h3><span class="type type--plant" title="Pflanze">Pflanze</span><span class="type type--toxic" title="Gift">Gift</span></header>
+<div class="mon__body"><img src="assets/dex/015.png" width="96" height="96" alt="Chäferli" loading="lazy" /><div>
+<p class="mon__cat">Blattkäfer-Wildling · 0,2 m · 1,2 kg</p>
+<p class="mon__txt">Es versteckt sich unter Blättern und frisst sich durch Wiesen. Bei Gefahr riecht es sehr bitter.</p>
+<p class="mon__evo">→ Stinkkäfer (Lv 16)</p>
+<p class="mon__hab">📍 Pfad 1, Pfad 2, Flüsterwald (häufig)</p></div></div>
+<ul class="mon__stats"><li><span>KP</span><b>46</b><i style="--v:46"></i></li><li><span>Ang</span><b>44</b><i style="--v:44"></i></li><li><span>Vert</span><b>56</b><i style="--v:56"></i></li><li><span>Mag</span><b>50</b><i style="--v:50"></i></li><li><span>Res</span><b>54</b><i style="--v:54"></i></li><li><span>Init</span><b>40</b><i style="--v:40"></i></li></ul>
+<p class="mon__tot">Summe 290 · Fangrate 255</p>
+<p class="mon__weak"><span>Schwach gegen</span> <span class="type type--fire" title="Feuer">Feuer</span> <span class="type type--wind" title="Wind">Wind</span></p>
+</article>
+<article class="mon" data-q="16 stinkkäfer pflanze gift stink-wildling" data-types="plant toxic">
+<header class="mon__head"><span class="mon__no">#016</span><h3>Stinkkäfer</h3><span class="type type--plant" title="Pflanze">Pflanze</span><span class="type type--toxic" title="Gift">Gift</span></header>
+<div class="mon__body"><img src="assets/dex/016.png" width="96" height="96" alt="Stinkkäfer" loading="lazy" /><div>
+<p class="mon__cat">Stink-Wildling · 0,9 m · 22 kg</p>
+<p class="mon__txt">Sein Panzer glänzt wie ein Blatt im Tau. Wer ihn ärgert, wird von übel riechendem Dunst vertrieben.</p>
+<p class="mon__evo">← Chäferli (Lv 16)</p>
+<p class="mon__hab">📍 Pfad 3 (sehr selten)</p></div></div>
+<ul class="mon__stats"><li><span>KP</span><b>66</b><i style="--v:66"></i></li><li><span>Ang</span><b>58</b><i style="--v:58"></i></li><li><span>Vert</span><b>84</b><i style="--v:84"></i></li><li><span>Mag</span><b>78</b><i style="--v:78"></i></li><li><span>Res</span><b>80</b><i style="--v:80"></i></li><li><span>Init</span><b>54</b><i style="--v:54"></i></li></ul>
+<p class="mon__tot">Summe 420 · Fangrate 45</p>
+<p class="mon__weak"><span>Schwach gegen</span> <span class="type type--fire" title="Feuer">Feuer</span> <span class="type type--wind" title="Wind">Wind</span></p>
+</article>
+<article class="mon" data-q="17 schneggli normal hüsli-wildling" data-types="normal">
+<header class="mon__head"><span class="mon__no">#017</span><h3>Schneggli</h3><span class="type type--normal" title="Normal">Normal</span></header>
+<div class="mon__body"><img src="assets/dex/017.png" width="96" height="96" alt="Schneggli" loading="lazy" /><div>
+<p class="mon__cat">Hüsli-Wildling · 0,3 m · 3 kg</p>
+<p class="mon__txt">Es trägt ein winziges Holzhaus als Schneckenhaus. Bei Regen schaut es neugierig aus dem Fensterchen.</p>
+<p class="mon__hab">📍 Pfad 2 (häufig, vor allem auf feuchten Wiesen)</p></div></div>
+<ul class="mon__stats"><li><span>KP</span><b>60</b><i style="--v:60"></i></li><li><span>Ang</span><b>40</b><i style="--v:40"></i></li><li><span>Vert</span><b>78</b><i style="--v:78"></i></li><li><span>Mag</span><b>42</b><i style="--v:42"></i></li><li><span>Res</span><b>66</b><i style="--v:66"></i></li><li><span>Init</span><b>20</b><i style="--v:20"></i></li></ul>
+<p class="mon__tot">Summe 306 · Fangrate 200</p>
+<p class="mon__weak"><span>Schwach gegen</span> <span class="type type--toxic" title="Gift">Gift</span> <span class="type type--spirit" title="Geist">Geist</span></p>
+</article>
+<article class="mon" data-q="18 farnli pflanze farn-wildling" data-types="plant">
+<header class="mon__head"><span class="mon__no">#018</span><h3>Farnli</h3><span class="type type--plant" title="Pflanze">Pflanze</span></header>
+<div class="mon__body"><img src="assets/dex/018.png" width="96" height="96" alt="Farnli" loading="lazy" /><div>
+<p class="mon__cat">Farn-Wildling · 0,3 m · 2,1 kg</p>
+<p class="mon__txt">Nachts rollen sich Farnli wie junge Farnwedel zusammen. Im Flüsterwald hört man sie leise rascheln.</p>
+<p class="mon__evo">→ Farnwicht (Lv 22)</p>
+<p class="mon__hab">📍 Flüsterwald (häufig)</p></div></div>
+<ul class="mon__stats"><li><span>KP</span><b>48</b><i style="--v:48"></i></li><li><span>Ang</span><b>50</b><i style="--v:50"></i></li><li><span>Vert</span><b>46</b><i style="--v:46"></i></li><li><span>Mag</span><b>58</b><i style="--v:58"></i></li><li><span>Res</span><b>52</b><i style="--v:52"></i></li><li><span>Init</span><b>56</b><i style="--v:56"></i></li></ul>
+<p class="mon__tot">Summe 310 · Fangrate 220</p>
+<p class="mon__weak"><span>Schwach gegen</span> <span class="type type--fire" title="Feuer">Feuer</span> <span class="type type--wind" title="Wind">Wind</span> <span class="type type--toxic" title="Gift">Gift</span></p>
+</article>
+<article class="mon" data-q="19 farnwicht pflanze geist waldgeist-wildling" data-types="plant spirit">
+<header class="mon__head"><span class="mon__no">#019</span><h3>Farnwicht</h3><span class="type type--plant" title="Pflanze">Pflanze</span><span class="type type--spirit" title="Geist">Geist</span></header>
+<div class="mon__body"><img src="assets/dex/019.png" width="96" height="96" alt="Farnwicht" loading="lazy" /><div>
+<p class="mon__cat">Waldgeist-Wildling · 1,2 m · 14 kg</p>
+<p class="mon__txt">Er huscht lautlos zwischen alten Tannen umher. Verirrte Wanderer führt er manchmal zurück zum Weg.</p>
+<p class="mon__evo">← Farnli (Lv 22)</p>
+<p class="mon__hab">📍 Nur durch Entwicklung</p></div></div>
+<ul class="mon__stats"><li><span>KP</span><b>64</b><i style="--v:64"></i></li><li><span>Ang</span><b>68</b><i style="--v:68"></i></li><li><span>Vert</span><b>64</b><i style="--v:64"></i></li><li><span>Mag</span><b>94</b><i style="--v:94"></i></li><li><span>Res</span><b>78</b><i style="--v:78"></i></li><li><span>Init</span><b>87</b><i style="--v:87"></i></li></ul>
+<p class="mon__tot">Summe 455 · Fangrate 45</p>
+<p class="mon__weak"><span>Schwach gegen</span> <span class="type type--fire" title="Feuer">Feuer</span> <span class="type type--wind" title="Wind">Wind</span> <span class="type type--spirit" title="Geist">Geist</span> <span class="type type--metal" title="Metall">Metall</span></p>
+<p class="mon__weak"><span>Immun gegen</span> <span class="type type--toxic" title="Gift">Gift</span></p>
+</article>
+<article class="mon" data-q="20 lärvli geist masken-wildling" data-types="spirit">
+<header class="mon__head"><span class="mon__no">#020</span><h3>Lärvli</h3><span class="type type--spirit" title="Geist">Geist</span></header>
+<div class="mon__body"><img src="assets/dex/020.png" width="96" height="96" alt="Lärvli" loading="lazy" /><div>
+<p class="mon__cat">Masken-Wildling · 0,4 m · 1,5 kg</p>
+<p class="mon__txt">Eine geschnitzte Holzmaske, in der ein Geist wohnt. Nachts schwebt sie klappernd durch den Wald.</p>
+<p class="mon__evo">→ Fratzgeist (Lv 25)</p>
+<p class="mon__hab">📍 Flüsterwald (selten)</p></div></div>
+<ul class="mon__stats"><li><span>KP</span><b>40</b><i style="--v:40"></i></li><li><span>Ang</span><b>46</b><i style="--v:46"></i></li><li><span>Vert</span><b>48</b><i style="--v:48"></i></li><li><span>Mag</span><b>66</b><i style="--v:66"></i></li><li><span>Res</span><b>58</b><i style="--v:58"></i></li><li><span>Init</span><b>52</b><i style="--v:52"></i></li></ul>
+<p class="mon__tot">Summe 310 · Fangrate 190</p>
+<p class="mon__weak"><span>Schwach gegen</span> <span class="type type--spirit" title="Geist">Geist</span> <span class="type type--metal" title="Metall">Metall</span> <span class="type type--light" title="Licht">Licht</span></p>
+<p class="mon__weak"><span>Immun gegen</span> <span class="type type--toxic" title="Gift">Gift</span></p>
+</article>
+<article class="mon" data-q="21 fratzgeist geist fasnachts-wildling" data-types="spirit">
+<header class="mon__head"><span class="mon__no">#021</span><h3>Fratzgeist</h3><span class="type type--spirit" title="Geist">Geist</span></header>
+<div class="mon__body"><img src="assets/dex/021.png" width="96" height="96" alt="Fratzgeist" loading="lazy" /><div>
+<p class="mon__cat">Fasnachts-Wildling · 1,7 m · 40 kg</p>
+<p class="mon__txt">Behängt mit Fell und Glocken zieht er durch dunkle Täler. Sein Gebimmel soll den Winter vertreiben.</p>
+<p class="mon__evo">← Lärvli (Lv 25)</p>
+<p class="mon__hab">📍 Nur durch Entwicklung</p></div></div>
+<ul class="mon__stats"><li><span>KP</span><b>60</b><i style="--v:60"></i></li><li><span>Ang</span><b>68</b><i style="--v:68"></i></li><li><span>Vert</span><b>74</b><i style="--v:74"></i></li><li><span>Mag</span><b>100</b><i style="--v:100"></i></li><li><span>Res</span><b>84</b><i style="--v:84"></i></li><li><span>Init</span><b>79</b><i style="--v:79"></i></li></ul>
+<p class="mon__tot">Summe 465 · Fangrate 45</p>
+<p class="mon__weak"><span>Schwach gegen</span> <span class="type type--spirit" title="Geist">Geist</span> <span class="type type--metal" title="Metall">Metall</span> <span class="type type--light" title="Licht">Licht</span></p>
+<p class="mon__weak"><span>Immun gegen</span> <span class="type type--toxic" title="Gift">Gift</span></p>
+</article>
+<article class="mon" data-q="22 tüpfli gift tupf-wildling" data-types="toxic">
+<header class="mon__head"><span class="mon__no">#022</span><h3>Tüpfli</h3><span class="type type--toxic" title="Gift">Gift</span></header>
+<div class="mon__body"><img src="assets/dex/022.png" width="96" height="96" alt="Tüpfli" loading="lazy" /><div>
+<p class="mon__cat">Tupf-Wildling · 0,2 m · 0,8 kg</p>
+<p class="mon__txt">Seine gelben Tupfen warnen Fressfeinde. Es lebt unter feuchtem Laub und kommt nur bei Regen hervor.</p>
+<p class="mon__evo">→ Moormolch (Lv 24)</p>
+<p class="mon__hab">📍 Flüsterwald, Pfad 3 (häufig bei Pfützen)</p></div></div>
+<ul class="mon__stats"><li><span>KP</span><b>54</b><i style="--v:54"></i></li><li><span>Ang</span><b>50</b><i style="--v:50"></i></li><li><span>Vert</span><b>50</b><i style="--v:50"></i></li><li><span>Mag</span><b>52</b><i style="--v:52"></i></li><li><span>Res</span><b>54</b><i style="--v:54"></i></li><li><span>Init</span><b>40</b><i style="--v:40"></i></li></ul>
+<p class="mon__tot">Summe 300 · Fangrate 220</p>
+<p class="mon__weak"><span>Schwach gegen</span> <span class="type type--earth" title="Erde">Erde</span> <span class="type type--light" title="Licht">Licht</span></p>
+</article>
+<article class="mon" data-q="23 moormolch gift wasser moor-wildling" data-types="toxic water">
+<header class="mon__head"><span class="mon__no">#023</span><h3>Moormolch</h3><span class="type type--toxic" title="Gift">Gift</span><span class="type type--water" title="Wasser">Wasser</span></header>
+<div class="mon__body"><img src="assets/dex/023.png" width="96" height="96" alt="Moormolch" loading="lazy" /><div>
+<p class="mon__cat">Moor-Wildling · 1,1 m · 30 kg</p>
+<p class="mon__txt">Es lauert in Mooren und Tümpeln. Aus seiner Haut sickert ein Gift, das das Wasser violett färbt.</p>
+<p class="mon__evo">← Tüpfli (Lv 24)</p>
+<p class="mon__hab">📍 Nur durch Entwicklung</p></div></div>
+<ul class="mon__stats"><li><span>KP</span><b>88</b><i style="--v:88"></i></li><li><span>Ang</span><b>74</b><i style="--v:74"></i></li><li><span>Vert</span><b>76</b><i style="--v:76"></i></li><li><span>Mag</span><b>80</b><i style="--v:80"></i></li><li><span>Res</span><b>82</b><i style="--v:82"></i></li><li><span>Init</span><b>60</b><i style="--v:60"></i></li></ul>
+<p class="mon__tot">Summe 460 · Fangrate 45</p>
+<p class="mon__weak"><span>Schwach gegen</span> <span class="type type--spark" title="Blitz">Blitz</span> <span class="type type--earth" title="Erde">Erde</span> <span class="type type--frost" title="Frost">Frost</span> <span class="type type--light" title="Licht">Licht</span></p>
+</article>
+<article class="mon" data-q="24 tauchli wasser taucher-wildling" data-types="water">
+<header class="mon__head"><span class="mon__no">#024</span><h3>Tauchli</h3><span class="type type--water" title="Wasser">Wasser</span></header>
+<div class="mon__body"><img src="assets/dex/024.png" width="96" height="96" alt="Tauchli" loading="lazy" /><div>
+<p class="mon__cat">Taucher-Wildling · 0,3 m · 1,1 kg</p>
+<p class="mon__txt">Tauchli reiten auf dem Rücken ihrer Eltern über den See. Schon früh tauchen sie nach Fischchen.</p>
+<p class="mon__evo">→ Seefürst (Lv 26)</p>
+<p class="mon__hab">📍 Pfad 3, Seeufer bei Seewil (häufig)</p></div></div>
+<ul class="mon__stats"><li><span>KP</span><b>48</b><i style="--v:48"></i></li><li><span>Ang</span><b>44</b><i style="--v:44"></i></li><li><span>Vert</span><b>44</b><i style="--v:44"></i></li><li><span>Mag</span><b>56</b><i style="--v:56"></i></li><li><span>Res</span><b>52</b><i style="--v:52"></i></li><li><span>Init</span><b>58</b><i style="--v:58"></i></li></ul>
+<p class="mon__tot">Summe 302 · Fangrate 220</p>
+<p class="mon__weak"><span>Schwach gegen</span> <span class="type type--plant" title="Pflanze">Pflanze</span> <span class="type type--spark" title="Blitz">Blitz</span> <span class="type type--frost" title="Frost">Frost</span></p>
+</article>
+<article class="mon" data-q="25 seefürst wasser wind schopf-wildling" data-types="water wind">
+<header class="mon__head"><span class="mon__no">#025</span><h3>Seefürst</h3><span class="type type--water" title="Wasser">Wasser</span><span class="type type--wind" title="Wind">Wind</span></header>
+<div class="mon__body"><img src="assets/dex/025.png" width="96" height="96" alt="Seefürst" loading="lazy" /><div>
+<p class="mon__cat">Schopf-Wildling · 1,2 m · 18 kg</p>
+<p class="mon__txt">Mit prächtigem Federschopf tanzt er über das Wasser. Seine Balztänze auf dem See sind berühmt.</p>
+<p class="mon__evo">← Tauchli (Lv 26)</p>
+<p class="mon__hab">📍 Nur durch Entwicklung</p></div></div>
+<ul class="mon__stats"><li><span>KP</span><b>70</b><i style="--v:70"></i></li><li><span>Ang</span><b>62</b><i style="--v:62"></i></li><li><span>Vert</span><b>64</b><i style="--v:64"></i></li><li><span>Mag</span><b>96</b><i style="--v:96"></i></li><li><span>Res</span><b>82</b><i style="--v:82"></i></li><li><span>Init</span><b>91</b><i style="--v:91"></i></li></ul>
+<p class="mon__tot">Summe 465 · Fangrate 45</p>
+<p class="mon__weak"><span>Schwach gegen</span> <span class="type type--spark" title="Blitz">Blitz 4×</span> <span class="type type--frost" title="Frost">Frost 4×</span></p>
+<p class="mon__weak"><span>Immun gegen</span> <span class="type type--earth" title="Erde">Erde</span></p>
+</article>
+<article class="mon" data-q="26 wühli erde maulwurf-wildling" data-types="earth">
+<header class="mon__head"><span class="mon__no">#026</span><h3>Wühli</h3><span class="type type--earth" title="Erde">Erde</span></header>
+<div class="mon__body"><img src="assets/dex/026.png" width="96" height="96" alt="Wühli" loading="lazy" /><div>
+<p class="mon__cat">Maulwurf-Wildling · 0,3 m · 2,5 kg</p>
+<p class="mon__txt">Mit seiner rosa Sternnase ertastet Wühli Würmer im Dunkeln. In einer Nacht gräbt es einen ganzen Acker um.</p>
+<p class="mon__evo">→ Erdwühler (Lv 24)</p>
+<p class="mon__hab">📍 Glimmerhöhle, Feldränder an Pfad 2 (häufig)</p></div></div>
+<ul class="mon__stats"><li><span>KP</span><b>50</b><i style="--v:50"></i></li><li><span>Ang</span><b>64</b><i style="--v:64"></i></li><li><span>Vert</span><b>60</b><i style="--v:60"></i></li><li><span>Mag</span><b>30</b><i style="--v:30"></i></li><li><span>Res</span><b>42</b><i style="--v:42"></i></li><li><span>Init</span><b>50</b><i style="--v:50"></i></li></ul>
+<p class="mon__tot">Summe 296 · Fangrate 220</p>
+<p class="mon__weak"><span>Schwach gegen</span> <span class="type type--water" title="Wasser">Wasser</span> <span class="type type--plant" title="Pflanze">Pflanze</span> <span class="type type--frost" title="Frost">Frost</span></p>
+<p class="mon__weak"><span>Immun gegen</span> <span class="type type--spark" title="Blitz">Blitz</span></p>
+</article>
+<article class="mon" data-q="27 erdwühler erde gruben-wildling" data-types="earth">
+<header class="mon__head"><span class="mon__no">#027</span><h3>Erdwühler</h3><span class="type type--earth" title="Erde">Erde</span></header>
+<div class="mon__body"><img src="assets/dex/027.png" width="96" height="96" alt="Erdwühler" loading="lazy" /><div>
+<p class="mon__cat">Gruben-Wildling · 1,1 m · 55 kg</p>
+<p class="mon__txt">Mit riesigen Grabkrallen pflügt er durch Fels wie durch Butter. Er gräbt endlose Gänge.</p>
+<p class="mon__evo">← Wühli (Lv 24)</p>
+<p class="mon__hab">📍 Nur durch Entwicklung</p></div></div>
+<ul class="mon__stats"><li><span>KP</span><b>80</b><i style="--v:80"></i></li><li><span>Ang</span><b>108</b><i style="--v:108"></i></li><li><span>Vert</span><b>90</b><i style="--v:90"></i></li><li><span>Mag</span><b>44</b><i style="--v:44"></i></li><li><span>Res</span><b>64</b><i style="--v:64"></i></li><li><span>Init</span><b>74</b><i style="--v:74"></i></li></ul>
+<p class="mon__tot">Summe 460 · Fangrate 45</p>
+<p class="mon__weak"><span>Schwach gegen</span> <span class="type type--water" title="Wasser">Wasser</span> <span class="type type--plant" title="Pflanze">Pflanze</span> <span class="type type--frost" title="Frost">Frost</span></p>
+<p class="mon__weak"><span>Immun gegen</span> <span class="type type--spark" title="Blitz">Blitz</span></p>
+</article>
+<article class="mon" data-q="28 stachli metall eisenstachel-wildling" data-types="metal">
+<header class="mon__head"><span class="mon__no">#028</span><h3>Stachli</h3><span class="type type--metal" title="Metall">Metall</span></header>
+<div class="mon__body"><img src="assets/dex/028.png" width="96" height="96" alt="Stachli" loading="lazy" /><div>
+<p class="mon__cat">Eisenstachel-Wildling · 0,3 m · 8 kg</p>
+<p class="mon__txt">Es leckt Eisen aus Erzadern und härtet so seine Stacheln. Bei Gefahr wird es zur klirrenden Kugel.</p>
+<p class="mon__evo">→ Erzborst (Lv 27)</p>
+<p class="mon__hab">📍 Glimmerhöhle, Pfad 4 (häufig)</p></div></div>
+<ul class="mon__stats"><li><span>KP</span><b>46</b><i style="--v:46"></i></li><li><span>Ang</span><b>52</b><i style="--v:52"></i></li><li><span>Vert</span><b>70</b><i style="--v:70"></i></li><li><span>Mag</span><b>40</b><i style="--v:40"></i></li><li><span>Res</span><b>56</b><i style="--v:56"></i></li><li><span>Init</span><b>36</b><i style="--v:36"></i></li></ul>
+<p class="mon__tot">Summe 300 · Fangrate 200</p>
+<p class="mon__weak"><span>Schwach gegen</span> <span class="type type--fire" title="Feuer">Feuer</span> <span class="type type--water" title="Wasser">Wasser</span> <span class="type type--spark" title="Blitz">Blitz</span></p>
+</article>
+<article class="mon" data-q="29 erzborst metall erde erz-wildling" data-types="metal earth">
+<header class="mon__head"><span class="mon__no">#029</span><h3>Erzborst</h3><span class="type type--metal" title="Metall">Metall</span><span class="type type--earth" title="Erde">Erde</span></header>
+<div class="mon__body"><img src="assets/dex/029.png" width="96" height="96" alt="Erzborst" loading="lazy" /><div>
+<p class="mon__cat">Erz-Wildling · 0,9 m · 85 kg</p>
+<p class="mon__txt">Seine Stahlstacheln sind scharf wie Nägel. In alten Stollen sammelt er Erz für neue Stacheln.</p>
+<p class="mon__evo">← Stachli (Lv 27)</p>
+<p class="mon__hab">📍 Nur durch Entwicklung</p></div></div>
+<ul class="mon__stats"><li><span>KP</span><b>70</b><i style="--v:70"></i></li><li><span>Ang</span><b>90</b><i style="--v:90"></i></li><li><span>Vert</span><b>112</b><i style="--v:112"></i></li><li><span>Mag</span><b>60</b><i style="--v:60"></i></li><li><span>Res</span><b>86</b><i style="--v:86"></i></li><li><span>Init</span><b>52</b><i style="--v:52"></i></li></ul>
+<p class="mon__tot">Summe 470 · Fangrate 45</p>
+<p class="mon__weak"><span>Schwach gegen</span> <span class="type type--water" title="Wasser">Wasser 4×</span> <span class="type type--plant" title="Pflanze">Pflanze</span> <span class="type type--frost" title="Frost">Frost</span></p>
+<p class="mon__weak"><span>Immun gegen</span> <span class="type type--spark" title="Blitz">Blitz</span></p>
+</article>
+<article class="mon" data-q="30 bergmännli geist erde stollen-wildling" data-types="spirit earth">
+<header class="mon__head"><span class="mon__no">#030</span><h3>Bergmännli</h3><span class="type type--spirit" title="Geist">Geist</span><span class="type type--earth" title="Erde">Erde</span></header>
+<div class="mon__body"><img src="assets/dex/030.png" width="96" height="96" alt="Bergmännli" loading="lazy" /><div>
+<p class="mon__cat">Stollen-Wildling · 0,6 m · 6 kg</p>
+<p class="mon__txt">Ein Geist, der verirrten Bergleuten heimleuchtet. Sein Kristalllicht flackert, wenn Steinschlag droht.</p>
+<p class="mon__hab">📍 Glimmerhöhle (selten)</p></div></div>
+<ul class="mon__stats"><li><span>KP</span><b>66</b><i style="--v:66"></i></li><li><span>Ang</span><b>78</b><i style="--v:78"></i></li><li><span>Vert</span><b>82</b><i style="--v:82"></i></li><li><span>Mag</span><b>80</b><i style="--v:80"></i></li><li><span>Res</span><b>78</b><i style="--v:78"></i></li><li><span>Init</span><b>56</b><i style="--v:56"></i></li></ul>
+<p class="mon__tot">Summe 440 · Fangrate 120</p>
+<p class="mon__weak"><span>Schwach gegen</span> <span class="type type--water" title="Wasser">Wasser</span> <span class="type type--plant" title="Pflanze">Pflanze</span> <span class="type type--frost" title="Frost">Frost</span> <span class="type type--spirit" title="Geist">Geist</span> <span class="type type--metal" title="Metall">Metall</span> <span class="type type--light" title="Licht">Licht</span></p>
+<p class="mon__weak"><span>Immun gegen</span> <span class="type type--spark" title="Blitz">Blitz</span> <span class="type type--toxic" title="Gift">Gift</span></p>
+</article>
+<article class="mon" data-q="31 zuckli blitz zuck-wildling" data-types="spark">
+<header class="mon__head"><span class="mon__no">#031</span><h3>Zuckli</h3><span class="type type--spark" title="Blitz">Blitz</span></header>
+<div class="mon__body"><img src="assets/dex/031.png" width="96" height="96" alt="Zuckli" loading="lazy" /><div>
+<p class="mon__cat">Zuck-Wildling · 0,3 m · 1,4 kg</p>
+<p class="mon__txt">Erschrickt Zuckli, sträubt sich sein Fell und knistert. Nachts leuchten seine Funken wie Glühwürmchen.</p>
+<p class="mon__evo">→ Zuckwiesel (Lv 18)</p>
+<p class="mon__hab">📍 Pfad 4, Stadtrand von Funkenstadt (häufig)</p></div></div>
+<ul class="mon__stats"><li><span>KP</span><b>40</b><i style="--v:40"></i></li><li><span>Ang</span><b>52</b><i style="--v:52"></i></li><li><span>Vert</span><b>38</b><i style="--v:38"></i></li><li><span>Mag</span><b>60</b><i style="--v:60"></i></li><li><span>Res</span><b>42</b><i style="--v:42"></i></li><li><span>Init</span><b>78</b><i style="--v:78"></i></li></ul>
+<p class="mon__tot">Summe 310 · Fangrate 200</p>
+<p class="mon__weak"><span>Schwach gegen</span> <span class="type type--earth" title="Erde">Erde</span> <span class="type type--metal" title="Metall">Metall</span></p>
+</article>
+<article class="mon" data-q="32 zuckwiesel blitz wiesel-wildling" data-types="spark">
+<header class="mon__head"><span class="mon__no">#032</span><h3>Zuckwiesel</h3><span class="type type--spark" title="Blitz">Blitz</span></header>
+<div class="mon__body"><img src="assets/dex/032.png" width="96" height="96" alt="Zuckwiesel" loading="lazy" /><div>
+<p class="mon__cat">Wiesel-Wildling · 0,8 m · 9 kg</p>
+<p class="mon__txt">Es flitzt so schnell durch Wiesen, dass ein Funkenschweif zurückbleibt. Es lädt sich an Leitungen auf.</p>
+<p class="mon__evo">← Zuckli (Lv 18) · → Voltmarder (Lv 32)</p>
+<p class="mon__hab">📍 Pfad 4 (selten)</p></div></div>
+<ul class="mon__stats"><li><span>KP</span><b>56</b><i style="--v:56"></i></li><li><span>Ang</span><b>72</b><i style="--v:72"></i></li><li><span>Vert</span><b>54</b><i style="--v:54"></i></li><li><span>Mag</span><b>82</b><i style="--v:82"></i></li><li><span>Res</span><b>58</b><i style="--v:58"></i></li><li><span>Init</span><b>100</b><i style="--v:100"></i></li></ul>
+<p class="mon__tot">Summe 422 · Fangrate 120</p>
+<p class="mon__weak"><span>Schwach gegen</span> <span class="type type--earth" title="Erde">Erde</span> <span class="type type--metal" title="Metall">Metall</span></p>
+</article>
+<article class="mon" data-q="33 voltmarder blitz gewitter-wildling" data-types="spark">
+<header class="mon__head"><span class="mon__no">#033</span><h3>Voltmarder</h3><span class="type type--spark" title="Blitz">Blitz</span></header>
+<div class="mon__body"><img src="assets/dex/033.png" width="96" height="96" alt="Voltmarder" loading="lazy" /><div>
+<p class="mon__cat">Gewitter-Wildling · 1,3 m · 32 kg</p>
+<p class="mon__txt">Bei Gewitter jagt er über die Kämme und zieht Blitze an. Sein Fell steht dann unter Hochspannung.</p>
+<p class="mon__evo">← Zuckwiesel (Lv 32)</p>
+<p class="mon__hab">📍 Nur durch Entwicklung</p></div></div>
+<ul class="mon__stats"><li><span>KP</span><b>70</b><i style="--v:70"></i></li><li><span>Ang</span><b>86</b><i style="--v:86"></i></li><li><span>Vert</span><b>66</b><i style="--v:66"></i></li><li><span>Mag</span><b>108</b><i style="--v:108"></i></li><li><span>Res</span><b>74</b><i style="--v:74"></i></li><li><span>Init</span><b>116</b><i style="--v:116"></i></li></ul>
+<p class="mon__tot">Summe 520 · Fangrate 45</p>
+<p class="mon__weak"><span>Schwach gegen</span> <span class="type type--earth" title="Erde">Erde</span> <span class="type type--metal" title="Metall">Metall</span></p>
+</article>
+<article class="mon" data-q="34 gondeli blitz metall seilbahn-wildling" data-types="spark metal">
+<header class="mon__head"><span class="mon__no">#034</span><h3>Gondeli</h3><span class="type type--spark" title="Blitz">Blitz</span><span class="type type--metal" title="Metall">Metall</span></header>
+<div class="mon__body"><img src="assets/dex/034.png" width="96" height="96" alt="Gondeli" loading="lazy" /><div>
+<p class="mon__cat">Seilbahn-Wildling · 0,9 m · 60 kg</p>
+<p class="mon__txt">Es gleitet an selbst gesponnenen Stromseilen über Schluchten. In Funkenstadt fährt es Kinder zur Schule.</p>
+<p class="mon__hab">📍 Pfad 4, bei den Leitungen nach Funkenstadt (selten)</p></div></div>
+<ul class="mon__stats"><li><span>KP</span><b>64</b><i style="--v:64"></i></li><li><span>Ang</span><b>60</b><i style="--v:60"></i></li><li><span>Vert</span><b>92</b><i style="--v:92"></i></li><li><span>Mag</span><b>96</b><i style="--v:96"></i></li><li><span>Res</span><b>80</b><i style="--v:80"></i></li><li><span>Init</span><b>58</b><i style="--v:58"></i></li></ul>
+<p class="mon__tot">Summe 450 · Fangrate 100</p>
+<p class="mon__weak"><span>Schwach gegen</span> <span class="type type--fire" title="Feuer">Feuer</span> <span class="type type--water" title="Wasser">Wasser</span> <span class="type type--earth" title="Erde">Erde</span></p>
+</article>
+<article class="mon" data-q="35 guggerli metall wind uhrwerk-wildling" data-types="metal wind">
+<header class="mon__head"><span class="mon__no">#035</span><h3>Guggerli</h3><span class="type type--metal" title="Metall">Metall</span><span class="type type--wind" title="Wind">Wind</span></header>
+<div class="mon__body"><img src="assets/dex/035.png" width="96" height="96" alt="Guggerli" loading="lazy" /><div>
+<p class="mon__cat">Uhrwerk-Wildling · 0,5 m · 4 kg</p>
+<p class="mon__txt">Es ruft zu jeder vollen Stunde. Die Uhrmacher von Funkenstadt stellen ihre Uhren nach seinem Ruf.</p>
+<p class="mon__hab">📍 Pfad 4, Stadtrand von Funkenstadt (selten)</p></div></div>
+<ul class="mon__stats"><li><span>KP</span><b>60</b><i style="--v:60"></i></li><li><span>Ang</span><b>82</b><i style="--v:82"></i></li><li><span>Vert</span><b>74</b><i style="--v:74"></i></li><li><span>Mag</span><b>70</b><i style="--v:70"></i></li><li><span>Res</span><b>72</b><i style="--v:72"></i></li><li><span>Init</span><b>102</b><i style="--v:102"></i></li></ul>
+<p class="mon__tot">Summe 460 · Fangrate 100</p>
+<p class="mon__weak"><span>Schwach gegen</span> <span class="type type--spark" title="Blitz">Blitz 4×</span> <span class="type type--fire" title="Feuer">Feuer</span> <span class="type type--water" title="Wasser">Wasser</span> <span class="type type--frost" title="Frost">Frost</span></p>
+<p class="mon__weak"><span>Immun gegen</span> <span class="type type--earth" title="Erde">Erde</span></p>
+</article>
+<article class="mon" data-q="36 flöckli frost schneehasen-wildling" data-types="frost">
+<header class="mon__head"><span class="mon__no">#036</span><h3>Flöckli</h3><span class="type type--frost" title="Frost">Frost</span></header>
+<div class="mon__body"><img src="assets/dex/036.png" width="96" height="96" alt="Flöckli" loading="lazy" /><div>
+<p class="mon__cat">Schneehasen-Wildling · 0,4 m · 2,8 kg</p>
+<p class="mon__txt">Im Winter wird sein Fell schneeweiß. Es hüpft so leicht, dass es im Pulverschnee kaum Spuren hinterlässt.</p>
+<p class="mon__evo">→ Firnhase (Lv 30)</p>
+<p class="mon__hab">📍 Rund um Frostalp, Gipfelpfad (häufig)</p></div></div>
+<ul class="mon__stats"><li><span>KP</span><b>46</b><i style="--v:46"></i></li><li><span>Ang</span><b>54</b><i style="--v:54"></i></li><li><span>Vert</span><b>44</b><i style="--v:44"></i></li><li><span>Mag</span><b>56</b><i style="--v:56"></i></li><li><span>Res</span><b>50</b><i style="--v:50"></i></li><li><span>Init</span><b>64</b><i style="--v:64"></i></li></ul>
+<p class="mon__tot">Summe 314 · Fangrate 200</p>
+<p class="mon__weak"><span>Schwach gegen</span> <span class="type type--normal" title="Normal">Normal</span> <span class="type type--fire" title="Feuer">Feuer</span> <span class="type type--metal" title="Metall">Metall</span></p>
+</article>
+<article class="mon" data-q="37 firnhase frost firn-wildling" data-types="frost">
+<header class="mon__head"><span class="mon__no">#037</span><h3>Firnhase</h3><span class="type type--frost" title="Frost">Frost</span></header>
+<div class="mon__body"><img src="assets/dex/037.png" width="96" height="96" alt="Firnhase" loading="lazy" /><div>
+<p class="mon__cat">Firn-Wildling · 1,1 m · 22 kg</p>
+<p class="mon__txt">Mit eisigen Läufen rast er über Gletscher. Wo er bremst, wirbeln Wolken aus Eiskristallen auf.</p>
+<p class="mon__evo">← Flöckli (Lv 30)</p>
+<p class="mon__hab">📍 Gipfelpfad (sehr selten)</p></div></div>
+<ul class="mon__stats"><li><span>KP</span><b>70</b><i style="--v:70"></i></li><li><span>Ang</span><b>90</b><i style="--v:90"></i></li><li><span>Vert</span><b>66</b><i style="--v:66"></i></li><li><span>Mag</span><b>84</b><i style="--v:84"></i></li><li><span>Res</span><b>70</b><i style="--v:70"></i></li><li><span>Init</span><b>100</b><i style="--v:100"></i></li></ul>
+<p class="mon__tot">Summe 480 · Fangrate 45</p>
+<p class="mon__weak"><span>Schwach gegen</span> <span class="type type--normal" title="Normal">Normal</span> <span class="type type--fire" title="Feuer">Feuer</span> <span class="type type--metal" title="Metall">Metall</span></p>
+</article>
+<article class="mon" data-q="38 steimandli erde wegweiser-wildling" data-types="earth">
+<header class="mon__head"><span class="mon__no">#038</span><h3>Steimandli</h3><span class="type type--earth" title="Erde">Erde</span></header>
+<div class="mon__body"><img src="assets/dex/038.png" width="96" height="96" alt="Steimandli" loading="lazy" /><div>
+<p class="mon__cat">Wegweiser-Wildling · 1,2 m · 140 kg</p>
+<p class="mon__txt">Es steht reglos an Bergpfaden und weist Wanderern den Weg. Erst wenn es sich bewegt, merkt man, dass es lebt.</p>
+<p class="mon__hab">📍 Pfad 4 (oberer Teil), Gipfelpfad (selten)</p></div></div>
+<ul class="mon__stats"><li><span>KP</span><b>70</b><i style="--v:70"></i></li><li><span>Ang</span><b>90</b><i style="--v:90"></i></li><li><span>Vert</span><b>120</b><i style="--v:120"></i></li><li><span>Mag</span><b>50</b><i style="--v:50"></i></li><li><span>Res</span><b>70</b><i style="--v:70"></i></li><li><span>Init</span><b>40</b><i style="--v:40"></i></li></ul>
+<p class="mon__tot">Summe 440 · Fangrate 120</p>
+<p class="mon__weak"><span>Schwach gegen</span> <span class="type type--water" title="Wasser">Wasser</span> <span class="type type--plant" title="Pflanze">Pflanze</span> <span class="type type--frost" title="Frost">Frost</span></p>
+<p class="mon__weak"><span>Immun gegen</span> <span class="type type--spark" title="Blitz">Blitz</span></p>
+</article>
+<article class="mon" data-q="39 föhngeier wind erde bartgeier-wildling" data-types="wind earth">
+<header class="mon__head"><span class="mon__no">#039</span><h3>Föhngeier</h3><span class="type type--wind" title="Wind">Wind</span><span class="type type--earth" title="Erde">Erde</span></header>
+<div class="mon__body"><img src="assets/dex/039.png" width="96" height="96" alt="Föhngeier" loading="lazy" /><div>
+<p class="mon__cat">Bartgeier-Wildling · 1,6 m · 34 kg</p>
+<p class="mon__txt">Er reitet auf warmen Föhnwinden. Knochen lässt er aus großer Höhe auf Felsen fallen, um sie zu knacken.</p>
+<p class="mon__hab">📍 Gipfelpfad (selten)</p></div></div>
+<ul class="mon__stats"><li><span>KP</span><b>80</b><i style="--v:80"></i></li><li><span>Ang</span><b>96</b><i style="--v:96"></i></li><li><span>Vert</span><b>72</b><i style="--v:72"></i></li><li><span>Mag</span><b>62</b><i style="--v:62"></i></li><li><span>Res</span><b>74</b><i style="--v:74"></i></li><li><span>Init</span><b>88</b><i style="--v:88"></i></li></ul>
+<p class="mon__tot">Summe 472 · Fangrate 90</p>
+<p class="mon__weak"><span>Schwach gegen</span> <span class="type type--frost" title="Frost">Frost 4×</span> <span class="type type--water" title="Wasser">Wasser</span></p>
+<p class="mon__weak"><span>Immun gegen</span> <span class="type type--spark" title="Blitz">Blitz</span> <span class="type type--earth" title="Erde">Erde</span></p>
+</article>
+<article class="mon" data-q="40 bernhardin frost normal rettungs-wildling" data-types="frost normal">
+<header class="mon__head"><span class="mon__no">#040</span><h3>Bernhardin</h3><span class="type type--frost" title="Frost">Frost</span><span class="type type--normal" title="Normal">Normal</span></header>
+<div class="mon__body"><img src="assets/dex/040.png" width="96" height="96" alt="Bernhardin" loading="lazy" /><div>
+<p class="mon__cat">Rettungs-Wildling · 1 m · 78 kg</p>
+<p class="mon__txt">Er spürt Verschüttete unter meterhohem Schnee auf. Am Hals trägt er ein Fässchen mit warmem Tee.</p>
+<p class="mon__hab">📍 Rund um Frostalp, Gipfelpfad (selten)</p></div></div>
+<ul class="mon__stats"><li><span>KP</span><b>110</b><i style="--v:110"></i></li><li><span>Ang</span><b>88</b><i style="--v:88"></i></li><li><span>Vert</span><b>76</b><i style="--v:76"></i></li><li><span>Mag</span><b>58</b><i style="--v:58"></i></li><li><span>Res</span><b>76</b><i style="--v:76"></i></li><li><span>Init</span><b>60</b><i style="--v:60"></i></li></ul>
+<p class="mon__tot">Summe 468 · Fangrate 90</p>
+<p class="mon__weak"><span>Schwach gegen</span> <span class="type type--normal" title="Normal">Normal</span> <span class="type type--fire" title="Feuer">Feuer</span> <span class="type type--toxic" title="Gift">Gift</span> <span class="type type--spirit" title="Geist">Geist</span> <span class="type type--metal" title="Metall">Metall</span></p>
+</article>
+<article class="mon" data-q="41 wyssli licht edelweiß-wildling" data-types="light">
+<header class="mon__head"><span class="mon__no">#041</span><h3>Wyssli</h3><span class="type type--light" title="Licht">Licht</span></header>
+<div class="mon__body"><img src="assets/dex/041.png" width="96" height="96" alt="Wyssli" loading="lazy" /><div>
+<p class="mon__cat">Edelweiß-Wildling · 0,2 m · 0,4 kg</p>
+<p class="mon__txt">Wyssli wachsen an steilen Felsen nahe dem Gipfel. Ihre weißen Blütensterne leuchten in Mondnächten.</p>
+<p class="mon__evo">→ Edelwyss (Lv 33)</p>
+<p class="mon__hab">📍 Gipfelpfad (sehr selten, auf Felsvorsprüngen)</p></div></div>
+<ul class="mon__stats"><li><span>KP</span><b>48</b><i style="--v:48"></i></li><li><span>Ang</span><b>36</b><i style="--v:36"></i></li><li><span>Vert</span><b>50</b><i style="--v:50"></i></li><li><span>Mag</span><b>68</b><i style="--v:68"></i></li><li><span>Res</span><b>62</b><i style="--v:62"></i></li><li><span>Init</span><b>52</b><i style="--v:52"></i></li></ul>
+<p class="mon__tot">Summe 316 · Fangrate 190</p>
+<p class="mon__weak"><span>Schwach gegen</span> <span class="type type--normal" title="Normal">Normal</span> <span class="type type--plant" title="Pflanze">Pflanze</span> <span class="type type--toxic" title="Gift">Gift</span></p>
+</article>
+<article class="mon" data-q="42 edelwyss licht pflanze sternblüten-wildling" data-types="light plant">
+<header class="mon__head"><span class="mon__no">#042</span><h3>Edelwyss</h3><span class="type type--light" title="Licht">Licht</span><span class="type type--plant" title="Pflanze">Pflanze</span></header>
+<div class="mon__body"><img src="assets/dex/042.png" width="96" height="96" alt="Edelwyss" loading="lazy" /><div>
+<p class="mon__cat">Sternblüten-Wildling · 0,8 m · 6,5 kg</p>
+<p class="mon__txt">Es gleitet auf warmen Aufwinden über Felswände. Sein sanftes Licht führt Verirrte sicher heim.</p>
+<p class="mon__evo">← Wyssli (Lv 33)</p>
+<p class="mon__hab">📍 Nur durch Entwicklung</p></div></div>
+<ul class="mon__stats"><li><span>KP</span><b>72</b><i style="--v:72"></i></li><li><span>Ang</span><b>54</b><i style="--v:54"></i></li><li><span>Vert</span><b>78</b><i style="--v:78"></i></li><li><span>Mag</span><b>108</b><i style="--v:108"></i></li><li><span>Res</span><b>100</b><i style="--v:100"></i></li><li><span>Init</span><b>78</b><i style="--v:78"></i></li></ul>
+<p class="mon__tot">Summe 490 · Fangrate 45</p>
+<p class="mon__weak"><span>Schwach gegen</span> <span class="type type--toxic" title="Gift">Gift 4×</span> <span class="type type--normal" title="Normal">Normal</span> <span class="type type--fire" title="Feuer">Feuer</span> <span class="type type--plant" title="Pflanze">Pflanze</span> <span class="type type--wind" title="Wind">Wind</span></p>
+</article>
+<article class="mon" data-q="43 firngeist geist frost nebel-wildling" data-types="spirit frost">
+<header class="mon__head"><span class="mon__no">#043</span><h3>Firngeist</h3><span class="type type--spirit" title="Geist">Geist</span><span class="type type--frost" title="Frost">Frost</span></header>
+<div class="mon__body"><img src="assets/dex/043.png" width="96" height="96" alt="Firngeist" loading="lazy" /><div>
+<p class="mon__cat">Nebel-Wildling · 1,5 m · 0,1 kg</p>
+<p class="mon__txt">Er erscheint in eisigen Nebelnächten am Gletscher. Wer ihm begegnet, spürt einen kalten Hauch im Nacken.</p>
+<p class="mon__hab">📍 Gipfelpfad (sehr selten, in Schneefeldern)</p></div></div>
+<ul class="mon__stats"><li><span>KP</span><b>66</b><i style="--v:66"></i></li><li><span>Ang</span><b>64</b><i style="--v:64"></i></li><li><span>Vert</span><b>70</b><i style="--v:70"></i></li><li><span>Mag</span><b>106</b><i style="--v:106"></i></li><li><span>Res</span><b>84</b><i style="--v:84"></i></li><li><span>Init</span><b>90</b><i style="--v:90"></i></li></ul>
+<p class="mon__tot">Summe 480 · Fangrate 90</p>
+<p class="mon__weak"><span>Schwach gegen</span> <span class="type type--metal" title="Metall">Metall 4×</span> <span class="type type--fire" title="Feuer">Feuer</span> <span class="type type--spirit" title="Geist">Geist</span> <span class="type type--light" title="Licht">Licht</span></p>
+<p class="mon__weak"><span>Immun gegen</span> <span class="type type--toxic" title="Gift">Gift</span></p>
+</article>
+<article class="mon" data-q="44 lindglut feuer licht alpenglut-wildling" data-types="fire light">
+<header class="mon__head"><span class="mon__no">#044</span><h3>Lindglut</h3><span class="type type--fire" title="Feuer">Feuer</span><span class="type type--light" title="Licht">Licht</span></header>
+<div class="mon__body"><img src="assets/dex/044.png" width="96" height="96" alt="Lindglut" loading="lazy" /><div>
+<p class="mon__cat">Alpenglut-Wildling · 4,2 m · 260 kg</p>
+<p class="mon__txt">Der Wächter der Alpenglut auf dem Gipfelhorn. Sein Atem färbt die Berge bei Sonnenuntergang rotgolden.</p>
+<p class="mon__hab">📍 Gipfel des Gipfelhorns – bewacht die Alpenglut (einmalige Begegnung)</p></div></div>
+<ul class="mon__stats"><li><span>KP</span><b>100</b><i style="--v:100"></i></li><li><span>Ang</span><b>100</b><i style="--v:100"></i></li><li><span>Vert</span><b>90</b><i style="--v:90"></i></li><li><span>Mag</span><b>118</b><i style="--v:118"></i></li><li><span>Res</span><b>94</b><i style="--v:94"></i></li><li><span>Init</span><b>92</b><i style="--v:92"></i></li></ul>
+<p class="mon__tot">Summe 594 · Fangrate 8</p>
+<p class="mon__weak"><span>Schwach gegen</span> <span class="type type--normal" title="Normal">Normal</span> <span class="type type--water" title="Wasser">Wasser</span> <span class="type type--earth" title="Erde">Erde</span> <span class="type type--wind" title="Wind">Wind</span> <span class="type type--toxic" title="Gift">Gift</span></p>
+</article>
         </div>
       </section>
     </main>
@@ -196,7 +725,7 @@
         <strong>Wildlinge – Alpenglühen</strong> ist ein Originalspiel. Figuren, Wildlinge, Orte, Texte, Pixelgrafik und Musik
         sind von Grund auf neu entstanden. Keine Verbindung zu bestehenden Spielereihen oder Marken.
       </p>
-      <p class="footer__links"><a href="handbuch.html">Handbuch</a> · <a data-repo>Quellcode auf GitHub</a> · <a data-releases>Releases</a> · <a href="#top">↑ Nach oben</a></p>
+      <p class="footer__links"><a href="#lexikon">Lexikon</a> · <a href="#typen">Typentabelle</a> · <a data-repo>Quellcode auf GitHub</a> · <a data-releases>Alle Versionen</a> · <a href="#top">↑ Nach oben</a></p>
     </footer>
   </body>
 </html>
