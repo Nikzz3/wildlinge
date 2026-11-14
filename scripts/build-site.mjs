@@ -22,4 +22,17 @@ cpSync('website', '_site', { recursive: true, filter: (src) => !/(Dockerfile|Cad
 mkdirSync('_site/play');
 for (const f of ['index.html', 'game.js']) cpSync(`dist/${f}`, `_site/play/${f}`);
 writeFileSync('_site/version.json', JSON.stringify({ version, commit }));
+
+// Cloudflare caches .css/.js for hours while HTML is always fresh, so new HTML would run against
+// old styles/scripts after a deploy. Versioned URLs make every deploy fetch matching assets.
+const v = commit.slice(0, 12);
+for (const [html, assets] of [['_site/index.html', ['style.css', 'main.js']], ['_site/play/index.html', ['game.js']]]) {
+  let src = readFileSync(html, 'utf8');
+  for (const a of assets) {
+    const ref = `"${a}"`;
+    if (!src.includes(ref)) throw new Error(`${html}: no reference to ${a}`);
+    src = src.replaceAll(ref, `"${a}?v=${v}"`);
+  }
+  writeFileSync(html, src);
+}
 console.log(`assembled _site/ (v${version})`);
