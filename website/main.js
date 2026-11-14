@@ -28,7 +28,7 @@ if (os) {
   const primary = document.getElementById('primary-download');
   primary.href = assetUrl(OS[os].asset);
   document.getElementById('primary-label').textContent = OS[os].label;
-  document.getElementById('primary-meta').innerHTML = 'Andere Systeme? <a href="#download">Alle Downloads</a>';
+  document.getElementById('primary-meta').innerHTML = 'Andere Systeme? <a href="#download">Alle Plattformen</a>';
   document.querySelector(`.platform[data-os="${os}"]`)?.classList.add('is-yours');
 }
 
@@ -57,3 +57,31 @@ for (const btn of document.querySelectorAll('.starter')) {
     say(`${btn.dataset.line} Lade das Spiel herunter und hol dir ${btn.dataset.name} im Labor in Moosbach!`);
   });
 }
+
+// Lexikon: search by name/number/type and toggle type filters.
+const dexQ = document.getElementById('dex-q');
+const dexCards = [...document.querySelectorAll('#dex .mon')];
+const dexBtns = [...document.querySelectorAll('.dex-filter__types button')];
+const dexOn = new Set();
+function filterDex() {
+  const q = dexQ.value.trim().toLowerCase();
+  let n = 0;
+  for (const c of dexCards) {
+    const show = (!q || c.dataset.q.includes(q)) && (!dexOn.size || c.dataset.types.split(' ').some((t) => dexOn.has(t)));
+    c.hidden = !show;
+    if (show) n++;
+  }
+  for (const b of dexBtns) {
+    b.classList.toggle('is-on', !dexOn.size || dexOn.has(b.dataset.t));
+    b.setAttribute('aria-pressed', dexOn.has(b.dataset.t));
+  }
+  document.getElementById('dex-count').textContent = `${n} / ${dexCards.length}`;
+}
+dexQ.addEventListener('input', filterDex);
+for (const b of dexBtns) {
+  b.addEventListener('click', () => {
+    dexOn.has(b.dataset.t) ? dexOn.delete(b.dataset.t) : dexOn.add(b.dataset.t);
+    filterDex();
+  });
+}
+filterDex();
