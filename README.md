@@ -63,6 +63,19 @@ npm run package -- win32 x64  # Windows-Version (geht auch vom Mac aus)
 npx tsx scripts/make-icon.ts   # App-Icons neu erzeugen (build/icon.png, .icns, .ico; braucht macOS)
 ```
 
+### Website und Releases
+
+Jeder Push auf `master` startet `.github/workflows/release.yml`: Tests → Desktop-Apps für Windows,
+macOS (arm64 + x64) und Linux → GitHub-Release `v<version>`. Sobald diese Checks grün sind, baut
+Railway aus demselben Commit die Download-Website (`.railway/railway.ts` → `website/Dockerfile`) und
+veröffentlicht sie. Die Website liegt in `website/`; der Browser-Build des Spiels kommt unter `play/` dazu
+(`npm run site` baut alles nach `_site/`).
+
+- Neue Release: `version` in `package.json` erhöhen. Ohne Erhöhung werden die Dateien der aktuellen
+  Release ersetzt – die Downloads entsprechen also immer dem Stand von `master`.
+- Die Download-Links zeigen auf `releases/latest/download/<datei>`; die Dateinamen deshalb nicht ändern.
+- Lokale Vorschau: `website/index.html` im Browser öffnen (oder `npm run site` und `_site/` ansehen).
+
 ## Spielstand
 
 Gespeichert wird über *START → SPEICHERN*; nach dem Finale speichert das Spiel automatisch.

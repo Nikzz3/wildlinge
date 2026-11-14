@@ -1,0 +1,11 @@
+{
+	admin off
+}
+
+# Railway provides PORT; TLS is terminated by Railway's edge.
+:{$PORT:8080} {
+	root * /srv
+	encode zstd gzip
+	file_server
+	header /version.json Cache-Control "no-cache"
+}

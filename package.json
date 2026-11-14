@@ -12,7 +12,8 @@
     "test": "vitest run",
     "sheets": "tsx scripts/render-sheets.ts",
     "e2e": "npm run build && node scripts/e2e.mjs",
-    "package": "npm run build && node scripts/package.mjs"
+    "package": "npm run build && node scripts/package.mjs",
+    "site": "npm run build && node scripts/build-site.mjs"
   },
   "devDependencies": {
     "@electron/packager": "^20.3.0",
@@ -21,6 +22,7 @@
     "electron": "^45.2.3",
     "esbuild": "^0.28.2",
     "playwright": "^1.65.0",
+    "railway": "^3.17.0",
     "tsx": "^4.23.15",
     "typescript": "^7.0.2",
     "vitest": "^5.1.0"

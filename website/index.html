@@ -1,0 +1,202 @@
+<!doctype html>
+<html lang="de">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Wildlinge – Alpenglühen · Jetzt herunterladen</title>
+    <meta name="description" content="Ein Monster-Sammel-Rollenspiel im Retro-Pixelstil, angesiedelt in den Alpen. Kostenlos für Windows, macOS und Linux – oder direkt im Browser spielen." />
+    <meta property="og:title" content="Wildlinge – Alpenglühen" />
+    <meta property="og:description" content="Fang Wildlinge, hol dir vier Abzeichen und rette die Alpenglut. Kostenlos für Windows, macOS und Linux." />
+    <meta property="og:image" content="assets/title.png" />
+    <link rel="icon" href="assets/icon.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=VT323&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="style.css" />
+    <script src="main.js" defer></script>
+  </head>
+  <body>
+    <nav class="nav">
+      <a class="nav__brand" href="#top"><img src="assets/icon.png" alt="" width="32" height="32" /> Wildlinge</a>
+      <div class="nav__links">
+        <a href="#welt">Welt</a>
+        <a href="#partner">Partner</a>
+        <a href="#bilder">Bilder</a>
+        <a href="#steuerung">Steuerung</a>
+        <a href="handbuch.html">Handbuch</a>
+        <a class="nav__cta" href="#download">Download</a>
+      </div>
+    </nav>
+
+    <div class="top" id="top">
+      <div class="sky" aria-hidden="true"><div class="stars"></div><div class="stars stars--far"></div></div>
+    <header class="hero">
+      <div class="hero__text">
+        <p class="badge"><span class="blink">●</span> <span data-version>Neueste Version</span></p>
+        <h1 class="logo">WILDLINGE</h1>
+        <p class="subtitle">✦ Alpenglühen ✦</p>
+        <p class="lead">
+          Ein Monster-Sammel-Rollenspiel im Stil der Handheld-Klassiker. Fang Wildlinge im hohen Gras,
+          hol dir vier Abzeichen und stell dich auf dem Gipfelhorn dem <strong>Frostmantel</strong>,
+          bevor er die Alpenglut löscht.
+        </p>
+        <div class="hero__actions">
+          <a class="btn btn--primary" id="primary-download" href="#download">
+            <span class="btn__icon">▼</span> <span id="primary-label">Gratis herunterladen</span>
+          </a>
+          <a class="btn btn--ghost" href="play/">▶ Im Browser spielen</a>
+        </div>
+        <p class="hero__meta" id="primary-meta">Windows · macOS · Linux — kostenlos, ohne Konto</p>
+      </div>
+
+      <div class="handheld" aria-label="Titelbildschirm von Wildlinge">
+        <div class="handheld__screen">
+          <img src="assets/title.png" alt="Titelbildschirm: Wildlinge – Alpenglühen" width="720" height="480" />
+        </div>
+        <div class="handheld__controls" aria-hidden="true">
+          <div class="dpad"><span></span></div>
+          <div class="handheld__label">PRESS START</div>
+          <div class="ab"><span>B</span><span>A</span></div>
+        </div>
+      </div>
+    </header>
+
+    <div class="mountains" aria-hidden="true"></div>
+    </div>
+
+    <main>
+      <!-- STATS -->
+      <section class="stats" id="welt">
+        <a class="stat" href="handbuch.html#lexikon"><span class="stat__num">44</span><span class="stat__label">Wildlinge zum Fangen</span></a>
+        <div class="stat"><span class="stat__num">4</span><span class="stat__label">Hallen &amp; Abzeichen</span></div>
+        <div class="stat"><span class="stat__num">~2h</span><span class="stat__label">Abenteuer bis zum Gipfel</span></div>
+        <div class="stat"><span class="stat__num">8-Bit</span><span class="stat__label">Chiptune-Soundtrack</span></div>
+      </section>
+
+      <!-- STORY / CHAPTERS -->
+      <section class="section">
+        <h2 class="section__title"><span>Die Reise durch Alvenland</span></h2>
+        <ol class="quest">
+          <li class="quest__step">
+            <span class="quest__num">1</span>
+            <div><h3>Moosbach → Kieselstadt</h3><p>Wähle deinen Partner im Labor von Professorin Arven und miss dich mit deinem Rivalen. Erste Halle: Erde.</p></div>
+          </li>
+          <li class="quest__step">
+            <span class="quest__num">2</span>
+            <div><h3>Flüsterwald → Seewil</h3><p>Im Wald wird es plötzlich eiskalt. Was hat der Frostmantel vor? Zweite Halle: Wasser.</p></div>
+          </li>
+          <li class="quest__step">
+            <span class="quest__num">3</span>
+            <div><h3>Glimmerhöhle → Funkenstadt</h3><p>Kristallhöhlen, Bergleute und eine Stadt unter Strom. Befreie das Funkenwerk. Dritte Halle: Blitz.</p></div>
+          </li>
+          <li class="quest__step">
+            <span class="quest__num">4</span>
+            <div><h3>Frostalp → Gipfelhorn</h3><p>Hinauf in den Schnee bis zur Alpenglut. Vierte Halle: Frost – und dann der letzte Kampf.</p></div>
+          </li>
+        </ol>
+      </section>
+
+      <!-- STARTERS -->
+      <section class="section" id="partner">
+        <h2 class="section__title"><span>Wähle deinen Partner</span></h2>
+        <div class="starters">
+          <button class="starter" data-name="Sprössli" data-line="Sprössli raschelt fröhlich mit seinen Blättern!">
+            <img src="assets/sprite-sproessli.png" alt="Sprössli" width="48" height="48" />
+            <span class="starter__name">Sprössli</span>
+            <span class="type type--plant">Pflanze</span>
+          </button>
+          <button class="starter" data-name="Zündli" data-line="Zündli schnaubt ein kleines Flämmchen!">
+            <img src="assets/sprite-zuendli.png" alt="Zündli" width="48" height="48" />
+            <span class="starter__name">Zündli</span>
+            <span class="type type--fire">Feuer</span>
+          </button>
+          <button class="starter" data-name="Biberli" data-line="Biberli klopft begeistert mit dem Schwanz!">
+            <img src="assets/sprite-biberli.png" alt="Biberli" width="48" height="48" />
+            <span class="starter__name">Biberli</span>
+            <span class="type type--water">Wasser</span>
+          </button>
+        </div>
+        <div class="dialog" aria-live="polite">
+          <p id="dialog-text">Professorin Arven: „Jeder Partner spielt sich anders. Na, wen nimmst du?“</p>
+          <span class="dialog__arrow" aria-hidden="true">▼</span>
+        </div>
+        <p class="section__more"><a href="handbuch.html#lexikon">Alle 44 Wildlinge &amp; die Typentabelle im Handbuch →</a></p>
+      </section>
+
+      <!-- SCREENSHOTS -->
+      <section class="section" id="bilder">
+        <h2 class="section__title"><span>Eindrücke</span></h2>
+        <div class="gallery">
+          <figure class="shot shot--wide"><img src="assets/battle.png" alt="Rundenbasierter Kampf: Zündli gegen Biberli" loading="lazy" /><figcaption>Rundenbasierte Kämpfe</figcaption></figure>
+          <figure class="shot"><img src="assets/moosbach.png" alt="Das Dorf Moosbach" loading="lazy" /><figcaption>Moosbach</figcaption></figure>
+          <figure class="shot"><img src="assets/seewil.png" alt="Die Seestadt Seewil" loading="lazy" /><figcaption>Seewil</figcaption></figure>
+          <figure class="shot"><img src="assets/fluesterwald.png" alt="Der vereiste Flüsterwald" loading="lazy" /><figcaption>Flüsterwald</figcaption></figure>
+          <figure class="shot"><img src="assets/gipfelhorn.png" alt="Der Aufstieg zum Gipfelhorn" loading="lazy" /><figcaption>Gipfelhorn</figcaption></figure>
+        </div>
+      </section>
+
+      <!-- DOWNLOAD -->
+      <section class="section download" id="download">
+        <h2 class="section__title"><span>Download</span></h2>
+        <p class="download__intro">
+          Kostenlos, ohne Konto, ohne Werbung. Immer die <strong data-version>neueste Version</strong> – direkt aus dem Build.
+        </p>
+        <div class="platforms">
+          <article class="platform" data-os="windows">
+            <div class="platform__icon" aria-hidden="true">⊞</div>
+            <h3>Windows</h3>
+            <p class="platform__sub">Windows 10 / 11 · 64-Bit</p>
+            <a class="btn btn--primary btn--block" data-asset="Wildlinge-windows-x64.zip">Download .zip</a>
+            <p class="platform__hint">Entpacken und <code>wildlinge.exe</code> starten. Bei „Der Computer wurde durch Windows geschützt“: <em>Weitere Informationen → Trotzdem ausführen</em>.</p>
+          </article>
+          <article class="platform" data-os="mac">
+            <div class="platform__icon" aria-hidden="true">⌘</div>
+            <h3>macOS</h3>
+            <p class="platform__sub">Apple Silicon (M1 und neuer)</p>
+            <a class="btn btn--primary btn--block" data-asset="Wildlinge-macos-arm64.zip">Download .zip</a>
+            <a class="platform__alt" data-asset="Wildlinge-macos-x64.zip">Intel-Mac? Hier entlang</a>
+            <p class="platform__hint">Entpacken, <code>Wildlinge.app</code> in „Programme“ ziehen. Beim ersten Start: <em>Rechtsklick → Öffnen</em> (oder Systemeinstellungen → Datenschutz &amp; Sicherheit → „Dennoch öffnen“).</p>
+          </article>
+          <article class="platform" data-os="linux">
+            <div class="platform__icon" aria-hidden="true">$_</div>
+            <h3>Linux</h3>
+            <p class="platform__sub">x86-64</p>
+            <a class="btn btn--primary btn--block" data-asset="Wildlinge-linux-x64.tar.gz">Download .tar.gz</a>
+            <p class="platform__hint">Entpacken mit <code>tar xzf Wildlinge-linux-x64.tar.gz</code>, dann <code>./wildlinge</code> im Ordner starten.</p>
+          </article>
+          <article class="platform platform--browser">
+            <div class="platform__icon" aria-hidden="true">▶</div>
+            <h3>Browser</h3>
+            <p class="platform__sub">Keine Installation</p>
+            <a class="btn btn--ghost btn--block" href="play/">Jetzt spielen</a>
+            <p class="platform__hint">Läuft in jedem aktuellen Browser. Der Spielstand wird lokal im Browser gespeichert.</p>
+          </article>
+        </div>
+        <p class="download__all">
+          <a data-releases>Alle Versionen &amp; Änderungen</a>
+        </p>
+      </section>
+
+      <!-- CONTROLS -->
+      <section class="section" id="steuerung">
+        <h2 class="section__title"><span>Steuerung</span></h2>
+        <div class="controls">
+          <div class="control"><span class="keys"><kbd>↑</kbd><kbd>←</kbd><kbd>↓</kbd><kbd>→</kbd> / <kbd>W</kbd><kbd>A</kbd><kbd>S</kbd><kbd>D</kbd></span><span>Bewegen, Cursor</span></div>
+          <div class="control"><span class="keys"><kbd>Z</kbd><kbd>Y</kbd><kbd>Leertaste</kbd><kbd>J</kbd></span><span><b class="pad pad--a">A</b> Bestätigen, sprechen</span></div>
+          <div class="control"><span class="keys"><kbd>X</kbd><kbd>Rück</kbd><kbd>K</kbd><kbd>Esc</kbd></span><span><b class="pad pad--b">B</b> Abbrechen · halten = rennen</span></div>
+          <div class="control"><span class="keys"><kbd>Enter</kbd></span><span><b class="pad">START</b> Menü</span></div>
+          <div class="control"><span class="keys"><kbd>Shift</kbd><kbd>Tab</kbd></span><span><b class="pad">SELECT</b></span></div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <img src="assets/sprite-lindglut.png" alt="" width="96" height="96" class="footer__sprite" />
+      <p>
+        <strong>Wildlinge – Alpenglühen</strong> ist ein Originalspiel. Figuren, Wildlinge, Orte, Texte, Pixelgrafik und Musik
+        sind von Grund auf neu entstanden. Keine Verbindung zu bestehenden Spielereihen oder Marken.
+      </p>
+      <p class="footer__links"><a href="handbuch.html">Handbuch</a> · <a data-repo>Quellcode auf GitHub</a> · <a data-releases>Releases</a> · <a href="#top">↑ Nach oben</a></p>
+    </footer>
+  </body>
+</html>
