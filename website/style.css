@@ -304,6 +304,8 @@ kbd {
 .mon__tot { margin: 6px 0 0; text-align: right; font-size: 17px; color: #6a6252; }
 .mon__weak { display: flex; flex-wrap: wrap; align-items: center; gap: 4px; margin: auto 0 0; padding-top: 10px; font-size: 18px; }
 .mon__weak > span:first-child { color: #a8322a; margin-right: 4px; }
+.mon__weak + .mon__weak { margin-top: 0; padding-top: 6px; }
+.mon__weak + .mon__weak > span:first-child { color: var(--teal); }
 
 /* footer */
 .footer { text-align: center; padding: 40px 24px 56px; background: var(--night); border-top: var(--px) solid #000; }
