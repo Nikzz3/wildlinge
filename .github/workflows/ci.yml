@@ -1,0 +1,56 @@
+# Checks every pull request must pass before merging. release.yml reuses this workflow on master.
+name: CI
+
+on:
+  pull_request:
+  workflow_call:
+
+concurrency:
+  group: ci-${{ github.event.pull_request.number || github.sha }}
+  cancel-in-progress: ${{ github.event_name == 'pull_request' }}
+
+permissions:
+  contents: read
+
+jobs:
+  # Typecheck, Vitest (logic, data, map validation, world graph) and the website assembly.
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: { node-version: 24, cache: npm }
+      - run: npm ci
+        env: { ELECTRON_SKIP_BINARY_DOWNLOAD: 1 }
+      - run: npm run typecheck
+      - run: npm test
+      - run: npm run site
+
+  # Playwright scenarios against the browser build: story playthroughs of all chapters + input fuzzing.
+  e2e:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: { node-version: 24, cache: npm }
+      - run: npm ci
+        env: { ELECTRON_SKIP_BINARY_DOWNLOAD: 1 }
+      - run: npx playwright install --with-deps chromium
+      - run: npm run e2e
+      - uses: actions/upload-artifact@v4
+        if: failure()
+        with: { name: e2e-screenshots, path: out/e2e/, if-no-files-found: ignore }
+
+  # The packaged Linux app boots to the title screen and has the native save bridge.
+  electron:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: { node-version: 24, cache: npm }
+      - run: npm ci
+        env: { ELECTRON_SKIP_BINARY_DOWNLOAD: 1 }
+      - run: npm run package -- linux x64
+      # Ubuntu 24.04 blocks the unprivileged user namespaces Chromium's sandbox needs.
+      - run: sudo sysctl -w kernel.apparmor_restrict_unprivileged_userns=0
+      - run: xvfb-run -a node scripts/electron-smoke.mjs release/Wildlinge-linux-x64/wildlinge
