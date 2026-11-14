@@ -65,7 +65,7 @@ npx tsx scripts/make-icon.ts   # App-Icons neu erzeugen (build/icon.png, .icns, 
 
 ### Website und Releases
 
-Jeder Push auf `master` startet `.github/workflows/release.yml`: Tests → Desktop-Apps für Windows,
+Jeder Push auf `master` startet `.github/workflows/release.yml`: CI-Checks → Desktop-Apps für Windows,
 macOS (arm64 + x64) und Linux → GitHub-Release `v<version>`. Sobald diese Checks grün sind, baut
 Railway aus demselben Commit die Download-Website (`.railway/railway.ts` → `website/Dockerfile`) und
 veröffentlicht sie. Die Website liegt in `website/`; der Browser-Build des Spiels kommt unter `play/` dazu
@@ -89,6 +89,10 @@ Die Desktop-App legt den Spielstand als `save.json` im Benutzerdatenordner ab:
 - Linux: `~/.config/wildlinge/save.json`
 
 ## Entwicklung und Tests
+
+Jeder Pull Request durchläuft `.github/workflows/ci.yml` (dieselben Checks laufen vor jeder Release):
+Typecheck, Vitest und Website-Build, die Playwright-Szenarien sowie der Electron-Rauchtest mit der
+gepackten Linux-App.
 
 ```sh
 npm run typecheck              # TypeScript (strict)
