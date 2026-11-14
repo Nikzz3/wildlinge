@@ -17,6 +17,7 @@ export const ICON_IDS = [
   'party_ball_empty', // 8×8 empty slot
   'crystal_throw', // 12×12 default capture crystal (Fangkristall); per item: crystalThrowIcon()
   'shadow', // 16×6 ellipse shadow (ledge jumps)
+  'save', // 12×12 floppy disk, shown briefly after an autosave
 ] as const;
 export type IconId = (typeof ICON_IDS)[number];
 
@@ -270,8 +271,24 @@ const SIZES: Record<IconId, [number, number]> = {
   cursor: [8, 8], cursor_light: [8, 8], cursor_hollow: [8, 8], arrow_down: [8, 8], arrow_up: [8, 8],
   emote_exclaim: [16, 16], emote_question: [16, 16], emote_heart: [16, 16],
   party_ball: [8, 8], party_ball_status: [8, 8], party_ball_fainted: [8, 8], party_ball_empty: [8, 8],
-  crystal_throw: [12, 12], shadow: [16, 6],
+  crystal_throw: [12, 12], shadow: [16, 6], save: [12, 12],
 };
+
+const FLOPPY = `
+OOOOOOOOOOO.
+OBSSSSkSSBBO
+OBSSSSkSSBBO
+OBSSSSSSSBBO
+OBBBBBBBBBBO
+OBBBBBBBBBBO
+OBwwwwwwwwBO
+OBwLLLLLLwBO
+OBwwwwwwwwBO
+OBwLLLLLLwBO
+OBwwwwwwwwBO
+OOOOOOOOOOOO
+`;
+const FLOPPY_INK = { O: '#283048', B: '#4878c0', S: '#c8d0d8', k: '#283048', w: '#f8f8f8', L: '#a0a8b8' };
 
 function makeIcon(id: IconId): Bitmap {
   switch (id) {
@@ -303,6 +320,8 @@ function makeIcon(id: IconId): Bitmap {
       return draw(GEM_SMALL, GEM_TEAL);
     case 'shadow':
       return draw(SHADOW, { '#': '#18202860' });
+    case 'save':
+      return draw(FLOPPY, FLOPPY_INK);
   }
 }
 

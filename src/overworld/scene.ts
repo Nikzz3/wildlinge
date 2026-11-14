@@ -75,6 +75,10 @@ export class OverworldScene implements Scene {
     this.queue = [];
   }
 
+  canAutosave(): boolean {
+    return this.alive && !this.busy && !this.curtain && !this.player.moving;
+  }
+
   update(): void {
     const stepped = this.player.update();
     let trainerStepped = false;

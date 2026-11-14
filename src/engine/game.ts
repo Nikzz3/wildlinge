@@ -1,3 +1,4 @@
+import { icon } from '../art';
 import { createAudio } from '../audio';
 import type { AudioApi, GameContext, Scene, UiApi } from '../core/contracts';
 import { createRng, type Rng } from '../core/rng';
@@ -10,6 +11,10 @@ import { createStorage, type Storage } from './storage';
 import { createUi } from './ui';
 
 const FRAME_MS = 1000 / 60;
+/** Play time between autosaves (2 minutes). */
+const AUTOSAVE_FRAMES = 60 * 120;
+/** How long the save icon stays on screen after an autosave. */
+const SAVE_ICON_FRAMES = 90;
 
 interface Fade {
   alpha: number;
@@ -41,6 +46,11 @@ export class Game implements GameContext {
   private readonly fade: Fade = { alpha: 0, color: '#000000', target: 0, step: 0, resolve: null };
   private waiters: { at: number; resolve: () => void }[] = [];
   private readonly storage: Storage;
+  /** Play frames since the last save or load. */
+  private sinceSave = 0;
+  /** The state object last saved or loaded. Autosave only overwrites the save of the game being played. */
+  private persisted: SaveData | null = null;
+  private saveIconAt = -SAVE_ICON_FRAMES;
 
   constructor(
     private readonly canvas: HTMLCanvasElement,
@@ -149,7 +159,25 @@ export class Game implements GameContext {
   // --- persistence ------------------------------------------------------------
 
   save(): void {
-    if (!this.storage.write(this.state)) this.reportError(new Error('Speichern fehlgeschlagen'));
+    if (!this.write()) this.reportError(new Error('Speichern fehlgeschlagen'));
+  }
+
+  private write(): boolean {
+    if (!this.storage.write(this.state)) return false;
+    this.persisted = this.state;
+    this.sinceSave = 0;
+    return true;
+  }
+
+  /** Saves every AUTOSAVE_FRAMES of play, once the overworld is the only scene and at rest. */
+  private autosave(): void {
+    if (this.sinceSave < AUTOSAVE_FRAMES || this.fading || this.scenes.length !== 1) return;
+    if (!this.scenes[0]!.canAutosave?.()) return;
+    this.sinceSave = 0;
+    // a new game started over an existing save must not silently replace it; a manual save takes over
+    if (this.state !== this.persisted && this.storage.exists()) return;
+    if (this.write()) this.saveIconAt = this.frame;
+    else this.reportError(new Error('Automatisches Speichern fehlgeschlagen'));
   }
 
   hasSave(): boolean {
@@ -160,6 +188,8 @@ export class Game implements GameContext {
     const data = this.storage.read();
     if (!data) return false;
     this.state = data;
+    this.persisted = data;
+    this.sinceSave = 0;
     this.applyOptions();
     return true;
   }
@@ -180,7 +210,11 @@ export class Game implements GameContext {
       this.reportError(err);
     }
     this.frame++;
-    if (this.scenes[0]?.name === 'overworld') this.state.playFrames++;
+    if (this.scenes[0]?.name === 'overworld') {
+      this.state.playFrames++;
+      this.sinceSave++;
+      this.autosave();
+    }
     if (this.waiters.length) {
       const due = this.waiters.filter((w) => w.at <= this.frame);
       this.waiters = this.waiters.filter((w) => w.at > this.frame);
@@ -208,6 +242,7 @@ export class Game implements GameContext {
         this.reportError(err);
       }
     }
+    this.drawSaveIcon();
     g.overlay(this.fade.color, this.fade.alpha);
     if (this.errors.length && !this.testMode) {
       g.fillRect(0, 0, 240, 12, '#600000');
@@ -216,6 +251,14 @@ export class Game implements GameContext {
         shadow: null,
       });
     }
+  }
+
+  /** Floppy in the top-right corner after an autosave; hidden as soon as a menu or dialog opens. */
+  private drawSaveIcon(): void {
+    const t = this.frame - this.saveIconAt;
+    if (t >= SAVE_ICON_FRAMES || this.scenes.length !== 1) return;
+    const alpha = Math.min(1, t / 8, (SAVE_ICON_FRAMES - t) / 16);
+    this.gfx.drawBitmap(icon('save'), this.gfx.width - 16, 4, { alpha });
   }
 
   step(): void {
