@@ -2,6 +2,12 @@
 
 Additive changes to `src/core/*` after the initial contracts, newest first.
 
+## Autosave
+
+- `Scene.canAutosave?(): boolean`: new optional method. The engine autosaves every 2 minutes of
+  play time, but only when the sole scene on the stack returns true (the overworld: no script
+  running, player not mid-step). Scenes without it never trigger an autosave.
+
 ## Chapter 1 QA
 
 - `BattleEvent` `'move'`: new optional field `miss?: boolean`. The engine now emits a `move` event

@@ -78,7 +78,10 @@ veröffentlicht sie. Die Website liegt in `website/`; der Browser-Build des Spie
 
 ## Spielstand
 
-Gespeichert wird über *START → SPEICHERN*; nach dem Finale speichert das Spiel automatisch.
+Gespeichert wird über *START → SPEICHERN*. Zusätzlich speichert das Spiel alle zwei Minuten Spielzeit
+automatisch, sobald man in der Oberwelt frei herumläuft (kein Menü, kein Dialog); eine kleine Diskette oben
+rechts zeigt das an. Ein neues Spiel überschreibt einen bestehenden Spielstand erst, wenn man es einmal von
+Hand speichert. Nach dem Finale speichert das Spiel ebenfalls automatisch.
 Die Desktop-App legt den Spielstand als `save.json` im Benutzerdatenordner ab:
 
 - macOS: `~/Library/Application Support/wildlinge/save.json`

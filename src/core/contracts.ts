@@ -86,6 +86,8 @@ export interface Scene {
   /** Called when a scene above this one was removed and this is the top again. */
   onResume?(g: GameContext): void;
   onExit?(g: GameContext): void;
+  /** True while the scene is at rest and the game may autosave (asked only when it is the only scene). */
+  canAutosave?(): boolean;
 }
 
 export interface GameContext {
