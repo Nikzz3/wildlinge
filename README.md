@@ -60,6 +60,7 @@ liegt dann im `localStorage`.
 ```sh
 npm run package  # erstellt release/Wildlinge-<plattform>-<arch>/ (Standard: aktuelles System)
 npm run package -- win32 x64  # Windows-Version (geht auch vom Mac aus)
+npm run appimage # Linux-AppImage mit Startmenü-Eintrag (release/Wildlinge-linux-x64.AppImage)
 npx tsx scripts/make-icon.ts   # App-Icons neu erzeugen (build/icon.png, .icns, .ico; braucht macOS)
 ```
 

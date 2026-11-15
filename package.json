@@ -4,6 +4,7 @@
   "private": true,
   "description": "Wildlinge – ein originelles Monster-Sammel-RPG im 2D-Retro-Stil",
   "main": "electron/main.cjs",
+  "desktopName": "wildlinge.desktop",
   "type": "module",
   "scripts": {
     "build": "node scripts/build.mjs",
@@ -13,6 +14,7 @@
     "sheets": "tsx scripts/render-sheets.ts",
     "e2e": "npm run build && node scripts/e2e.mjs",
     "package": "npm run build && node scripts/package.mjs",
+    "appimage": "npm run package -- linux x64 && node scripts/appimage.mjs",
     "site": "npm run build && node scripts/build-site.mjs"
   },
   "devDependencies": {
