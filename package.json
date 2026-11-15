@@ -14,6 +14,7 @@
     "sheets": "tsx scripts/render-sheets.ts",
     "e2e": "npm run build && node scripts/e2e.mjs",
     "package": "npm run build && node scripts/package.mjs",
+    "dmg": "npm run package && node scripts/dmg.mjs",
     "appimage": "npm run package -- linux x64 && node scripts/appimage.mjs",
     "site": "npm run build && node scripts/build-site.mjs"
   },

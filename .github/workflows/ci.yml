@@ -62,3 +62,20 @@ jobs:
           unshare -Ur true
           status=0; timeout 15 xvfb-run -a release/Wildlinge-linux-x64.AppImage || status=$?
           test $status -eq 124
+
+  # The macOS DMG holds the signed app next to an Applications link, and the app boots from it.
+  macos:
+    runs-on: macos-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: { node-version: 24, cache: npm }
+      - run: npm ci
+        env: { ELECTRON_SKIP_BINARY_DOWNLOAD: 1 }
+      - run: npm run package -- darwin arm64
+      - run: node scripts/dmg.mjs release/Wildlinge-darwin-arm64 release/Wildlinge-macos-arm64.dmg
+      - run: |
+          hdiutil attach -nobrowse -readonly -mountpoint /Volumes/Wildlinge release/Wildlinge-macos-arm64.dmg
+          test "$(readlink /Volumes/Wildlinge/Applications)" = /Applications
+          codesign --verify --deep --strict /Volumes/Wildlinge/Wildlinge.app
+          node scripts/electron-smoke.mjs /Volumes/Wildlinge/Wildlinge.app/Contents/MacOS/wildlinge
