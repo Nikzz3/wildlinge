@@ -42,9 +42,9 @@ jobs:
         include:
           - { os: ubuntu-latest, platform: win32, arch: x64, asset: Wildlinge-windows-x64.zip }
           - { os: ubuntu-latest, platform: linux, arch: x64, asset: Wildlinge-linux-x64.AppImage }
-          # macOS builds run on a Mac so the bundle can be ad-hoc signed (otherwise "app is damaged").
-          - { os: macos-latest, platform: darwin, arch: arm64, asset: Wildlinge-macos-arm64.zip }
-          - { os: macos-latest, platform: darwin, arch: x64, asset: Wildlinge-macos-x64.zip }
+          # macOS builds run on a Mac: ad-hoc signing (otherwise "app is damaged") and hdiutil need one.
+          - { os: macos-latest, platform: darwin, arch: arm64, asset: Wildlinge-macos-arm64.dmg }
+          - { os: macos-latest, platform: darwin, arch: x64, asset: Wildlinge-macos-x64.dmg }
     runs-on: ${{ matrix.os }}
     steps:
       - uses: actions/checkout@v4
@@ -60,9 +60,7 @@ jobs:
         run: |
           dir="Wildlinge-${{ matrix.platform }}-${{ matrix.arch }}"
           case "${{ matrix.platform }}" in
-            darwin)
-              codesign --force --deep --sign - "$dir/Wildlinge.app"
-              ditto -c -k --keepParent "$dir/Wildlinge.app" "../${{ matrix.asset }}" ;;
+            darwin) (cd .. && node scripts/dmg.mjs "release/$dir" "${{ matrix.asset }}") ;;
             linux) (cd .. && node scripts/appimage.mjs "release/$dir" "${{ matrix.asset }}") ;;
             win32) zip -qry "../${{ matrix.asset }}" "$dir" ;;
           esac
