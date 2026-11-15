@@ -72,8 +72,10 @@ Railway aus demselben Commit die Download-Website (`.railway/railway.ts` → `we
 veröffentlicht sie. Die Website liegt in `website/`; der Browser-Build des Spiels kommt unter `play/` dazu
 (`npm run site` baut alles nach `_site/`).
 
-- Neue Release: `version` in `package.json` erhöhen. Ohne Erhöhung werden die Dateien der aktuellen
-  Release ersetzt – die Downloads entsprechen also immer dem Stand von `master`.
+- Versionen folgen Semver (`MAJOR.MINOR.PATCH`). Jeder Push auf `master` veröffentlicht automatisch den
+  nächsten Patch (`v1.0.1`, `v1.0.2`, …; `scripts/version.mjs`). `MAJOR.MINOR` steht in `package.json`
+  und wird von Hand erhöht (z. B. `1.1.0` → nächste Release `v1.1.0`).
+- Die Version wird ins Spiel gebaut und steht unten rechts auf dem Titelbildschirm (lokal: `…-dev`).
 - Die Download-Links zeigen auf `releases/latest/download/<datei>`; die Dateinamen deshalb nicht ändern.
 - Lokale Vorschau: `website/index.html` im Browser öffnen (oder `npm run site` und `_site/` ansehen).
 

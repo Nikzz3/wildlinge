@@ -1,8 +1,8 @@
 # Every push to master: CI checks (ci.yml) → package for all platforms → publish GitHub release.
 # The download website is deployed by Railway from the same push (.railway/railway.ts), after these checks pass.
 #
-# Releases are tagged v<package.json version>. Bump the version for a new release; pushes without
-# a bump refresh the assets of the current release (and move its tag), so "latest" is always master.
+# Versions are semver: package.json holds MAJOR.MINOR (bump by hand), every push releases the next
+# PATCH as tag v<version> (scripts/version.mjs). The version is baked into the game (title screen).
 # The website links to releases/latest/download/<asset>, so asset names must stay stable.
 name: Release
 
@@ -22,8 +22,21 @@ jobs:
   check:
     uses: ./.github/workflows/ci.yml
 
+  # The commit's release version: its existing tag (re-runs) or one patch above the latest release.
+  version:
+    runs-on: ubuntu-latest
+    outputs:
+      version: ${{ steps.version.outputs.version }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: { node-version: 24 }
+      - id: version
+        env: { GH_TOKEN: "${{ github.token }}" }
+        run: echo "version=$(node scripts/version.mjs)" >> "$GITHUB_OUTPUT"
+
   package:
-    needs: check
+    needs: [check, version]
     strategy:
       matrix:
         include:
@@ -40,6 +53,7 @@ jobs:
       - run: npm ci
         env: { ELECTRON_SKIP_BINARY_DOWNLOAD: 1 }
       - run: npm run package -- ${{ matrix.platform }} ${{ matrix.arch }}
+        env: { WILDLINGE_VERSION: "${{ needs.version.outputs.version }}" }
       - name: Archive
         shell: bash
         working-directory: release
@@ -59,30 +73,22 @@ jobs:
           if-no-files-found: error
 
   release:
-    needs: package
+    needs: [package, version]
     runs-on: ubuntu-latest
     permissions:
       contents: write
     steps:
-      - uses: actions/checkout@v4
-      - id: version
-        run: echo "version=$(node -p 'require("./package.json").version')" >> "$GITHUB_OUTPUT"
       - uses: actions/download-artifact@v4
         with: { path: assets, merge-multiple: true }
       - name: Publish release
         env:
           GH_TOKEN: ${{ github.token }}
-          TAG: v${{ steps.version.outputs.version }}
+          TAG: v${{ needs.version.outputs.version }}
         run: |
           notes="Build von ${GITHUB_SHA::7} ($(date -u +%Y-%m-%d))."
-          if gh release view "$TAG" >/dev/null 2>&1; then
-            gh api -X PATCH "repos/$GITHUB_REPOSITORY/git/refs/tags/$TAG" -f sha="$GITHUB_SHA" -F force=true >/dev/null
-            gh release upload "$TAG" assets/* --clobber
-            # Drop assets this build no longer produces (e.g. a renamed download).
-            for a in $(gh release view "$TAG" --json assets -q '.assets[].name'); do
-              [ -e "assets/$a" ] || gh release delete-asset "$TAG" "$a" -y
-            done
-            gh release edit "$TAG" --notes "$notes" --latest
+          if gh release view "$TAG" -R "$GITHUB_REPOSITORY" >/dev/null 2>&1; then
+            # re-run of a released commit: refresh its assets
+            gh release upload "$TAG" assets/* --clobber -R "$GITHUB_REPOSITORY"
           else
-            gh release create "$TAG" assets/* --target "$GITHUB_SHA" --title "Wildlinge $TAG" --notes "$notes" --latest
+            gh release create "$TAG" assets/* -R "$GITHUB_REPOSITORY" --target "$GITHUB_SHA" --title "Wildlinge $TAG" --notes "$notes" --latest
           fi
