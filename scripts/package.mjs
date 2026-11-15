@@ -5,9 +5,10 @@
  * Windows from macOS: npm run package -- win32 x64
  */
 import { packager } from '@electron/packager';
-import { existsSync } from 'node:fs';
+import { existsSync, readFileSync } from 'node:fs';
 
 const [platform = process.platform, arch = process.arch] = process.argv.slice(2);
+const { version } = JSON.parse(readFileSync('dist/version.json', 'utf8'));
 const icon = { darwin: 'build/icon.icns', win32: 'build/icon.ico' }[platform] ?? 'build/icon.png';
 
 const paths = await packager({
@@ -17,6 +18,7 @@ const paths = await packager({
   platform,
   arch,
   name: 'Wildlinge',
+  appVersion: version.replace(/-.*/, ''), // app metadata (Windows file version) must be numeric
   executableName: 'wildlinge',
   appBundleId: 'ch.wildlinge.alpengluehen',
   appCategoryType: 'public.app-category.role-playing-games',

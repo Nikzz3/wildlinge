@@ -5,6 +5,7 @@ import { COLORS } from '../engine/gfx';
 import { createOverworld } from '../overworld';
 import { newGameState, playTime } from '../state';
 import { openOptions } from '../ui/screens';
+import { VERSION } from '../version';
 import { START } from '../world';
 import { clamp01, drawBottom, sparkle, withAlpha } from './fx';
 import { runIntro } from './intro';
@@ -178,6 +179,7 @@ class TitleScene implements Scene {
     this.drawLogo(gfx);
     if (this.mode === 'attract') this.drawPrompt(gfx, f);
     else if (this.mode !== 'confirm') this.drawMenu(gfx, g);
+    if (this.t >= READY_AT) gfx.drawText(`v${VERSION}`, 237, 144, { align: 'right', color: '#a890b8', shadow: '#140a20' });
   }
 
   private drawLegend(gfx: Gfx, f: number): void {

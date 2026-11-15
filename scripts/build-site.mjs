@@ -1,12 +1,12 @@
 /**
  * Assembles the download website into _site/: website/ + the browser build of the game under play/
- * + version.json (read by website/main.js). Used by CI and for manual deploys.
+ * + version.json (read by website/main.js; the version comes from the game build). Used by CI and for manual deploys.
  * Usage: npm run site
  */
 import { execSync } from 'node:child_process';
 import { cpSync, mkdirSync, readFileSync, rmSync, writeFileSync } from 'node:fs';
 
-const { version } = JSON.parse(readFileSync('package.json', 'utf8'));
+const { version } = JSON.parse(readFileSync('dist/version.json', 'utf8'));
 const commit = process.env.RAILWAY_GIT_COMMIT_SHA || process.env.GITHUB_SHA || gitHead();
 
 function gitHead() {
