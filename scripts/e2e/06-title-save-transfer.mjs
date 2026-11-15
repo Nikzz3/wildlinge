@@ -46,14 +46,32 @@ export async function run(h) {
   const b = await launch();
   try {
     await b.run("g.game.state.playerName = 'Otto'; g.game.save();");
+    const otto = await b.run("return localStorage.getItem('wildlinge-save-test')");
     await openTransfer(b);
-    await b.run(select('Importieren'));
-    // a real key press: the browser opens the file picker only with user activation
-    const [chooser] = await Promise.all([
-      b.page.waitForEvent('filechooser'),
-      b.page.keyboard.press('z').then(() => b.run('await g.advance(3)')),
-    ]);
-    await chooser.setFiles(file);
+    /** Picks Importieren and chooses `path` in the file picker (a real key press: browsers need user activation). */
+    const importFile = async (path) => {
+      await b.run(select('Importieren'));
+      const [chooser] = await Promise.all([
+        b.page.waitForEvent('filechooser'),
+        b.page.keyboard.press('z').then(() => b.run('await g.advance(3)')),
+      ]);
+      await chooser.setFiles(path);
+      await b.run('await g.advance(10)');
+    };
+
+    // a broken file (incomplete options) is refused and leaves the existing save alone
+    const { writeFileSync } = await import('node:fs');
+    const broken = file + '.broken.json';
+    writeFileSync(broken, JSON.stringify({ ...JSON.parse(saved), options: {} }));
+    await importFile(broken);
+    const refusal = await b.run("return g.top() === 'message' ? g.game.stack.at(-1).pages?.join(' ') ?? 'message' : g.top()");
+    await b.shot('out/e2e/06-transfer-import-refused.png');
+    await b.run(closeMessages);
+    if ((await b.run("return localStorage.getItem('wildlinge-save-test')")) !== otto || (await b.run('return g.state.playerName')) !== 'Otto')
+      throw new Error(`broken file changed the save (message: ${refusal})`);
+
+    await b.run("await g.tap('a'); await g.advance(5)"); // reopen SPIELSTAND ÜBERTRAGEN
+    await importFile(file);
     await b.run("for (let i = 0; i < 60 && g.game.stack.at(-1).menu == null; i++) { if (g.top() === 'message' && i % 10 === 9) await g.tap('a'); else await g.advance(1); }");
     await b.shot('out/e2e/06-transfer-import-confirm.png');
     await b.run(select('Ja') + "await g.tap('a');" + closeMessages);

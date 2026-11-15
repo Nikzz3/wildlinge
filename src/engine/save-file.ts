@@ -4,9 +4,16 @@ import { newGameState } from '../state';
 
 export const SAVE_FILE_NAME = 'wildlinge-spielstand.json';
 
-/** Shape reference: a save must have every field of a new game with the same JSON type. */
+/** Shape reference: a save must have every field of a new game (nested objects too) with the same JSON type. */
 const TEMPLATE = newGameState({ mapId: '', x: 0, y: 0, facing: 'down' });
 const kind = (v: unknown) => (Array.isArray(v) ? 'array' : v === null ? 'null' : typeof v);
+
+function matches(value: unknown, template: unknown): boolean {
+  if (kind(value) !== kind(template)) return false;
+  if (kind(template) !== 'object') return true;
+  const v = value as Record<string, unknown>;
+  return Object.entries(template as Record<string, unknown>).every(([key, t]) => matches(v[key], t));
+}
 
 /** Parses an imported save file. Null if it is not a version-1 Wildlinge save. */
 export function parseSaveFile(json: string): SaveData | null {
@@ -16,10 +23,7 @@ export function parseSaveFile(json: string): SaveData | null {
   } catch {
     return null;
   }
-  if (kind(data) !== 'object') return null;
-  const d = data as Record<string, unknown>;
-  if (d.version !== 1) return null;
-  for (const [key, value] of Object.entries(TEMPLATE) as [string, unknown][]) if (kind(d[key]) !== kind(value)) return null;
+  if (!matches(data, TEMPLATE) || (data as SaveData).version !== 1) return null;
   return data as SaveData;
 }
 

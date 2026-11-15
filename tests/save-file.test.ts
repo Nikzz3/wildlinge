@@ -17,6 +17,7 @@ describe('parseSaveFile', () => {
     ['a future save version', JSON.stringify({ ...save(), version: 2 })],
     ['a missing field', JSON.stringify({ ...save(), badges: undefined })],
     ['a field of the wrong type', JSON.stringify({ ...save(), party: {} })],
+    ['incomplete options', JSON.stringify({ ...save(), options: {} })],
   ])('rejects %s', (_, json) => {
     expect(parseSaveFile(json)).toBeNull();
   });
