@@ -1,7 +1,7 @@
 /**
  * App icon from the game's own art: Zündli in front of the Alpenglut on a rounded square in the title's
  * sunset palette. Drawn at 64×64 and scaled with nearest neighbour to build/icon.png (1024 px), then
- * build/icon.icns via sips (small sizes) + iconutil (macOS). scripts/package.mjs picks both up.
+ * build/icon-256.png (Linux), build/icon.icns via sips (small sizes) + iconutil (macOS). scripts/package.mjs picks both up.
  * Usage: npx tsx scripts/make-icon.ts
  */
 import { execFileSync } from 'node:child_process';
@@ -67,6 +67,8 @@ function drawIcon(): Bitmap {
 const icon = drawIcon();
 mkdirSync('build', { recursive: true });
 writePng('build/icon.png', icon, 1024 / N);
+// Linux AppImage icon (scripts/appimage.mjs): hicolor/256x256, the size desktop integrators install.
+writePng('build/icon-256.png', icon, 256 / N);
 
 // macOS .icns: crisp integer scales from the 64 px art, sips for the two small sizes.
 const set = 'build/icon.iconset';
@@ -108,4 +110,4 @@ images.forEach(({ px, data }, i) => {
   offset += data.length;
 });
 writeFileSync('build/icon.ico', Buffer.concat([header, ...images.map((i) => i.data)]));
-console.log('wrote build/icon.png (1024 px), build/icon.icns and build/icon.ico');
+console.log('wrote build/icon.png (1024 px), build/icon-256.png, build/icon.icns and build/icon.ico');

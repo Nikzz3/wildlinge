@@ -7,7 +7,7 @@ const assetUrl = (asset) => `${GH}/releases/latest/download/${asset}`;
 const OS = {
   windows: { label: 'Für Windows herunterladen', asset: 'Wildlinge-windows-x64.zip' },
   mac: { label: 'Für macOS herunterladen', asset: 'Wildlinge-macos-arm64.zip' },
-  linux: { label: 'Für Linux herunterladen', asset: 'Wildlinge-linux-x64.tar.gz' },
+  linux: { label: 'Für Linux herunterladen', asset: 'Wildlinge-linux-x64.AppImage' },
 };
 
 function detectOs() {
