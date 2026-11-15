@@ -64,7 +64,8 @@ export async function run(h) {
     const broken = file + '.broken.json';
     writeFileSync(broken, JSON.stringify({ ...JSON.parse(saved), options: {} }));
     await importFile(broken);
-    const refusal = await b.run("return g.top() === 'message' ? g.game.stack.at(-1).pages?.join(' ') ?? 'message' : g.top()");
+    const refusal = await b.run("return g.top() === 'message' ? g.game.stack.at(-1).box.pages.flat().join(' ') : g.top()");
+    if (!refusal.includes('kein Wildlinge-Spielstand')) throw new Error(`broken file not refused: ${refusal}`);
     await b.shot('out/e2e/06-transfer-import-refused.png');
     await b.run(closeMessages);
     if ((await b.run("return localStorage.getItem('wildlinge-save-test')")) !== otto || (await b.run('return g.state.playerName')) !== 'Otto')
