@@ -86,13 +86,17 @@ class TitleScene implements Scene {
     }
     g.audio.playSfx('confirm');
     this.hasSave ??= g.hasSave() && g.load();
+    this.buildMenu();
+    this.index = 0;
+    this.mode = 'menu';
+  }
+
+  private buildMenu(): void {
     this.entries = [
       ...(this.hasSave ? [{ id: 'continue', label: 'WEITER', h: CONTINUE_H } as const] : []),
       { id: 'new', label: 'NEUES SPIEL', h: ROW_H },
       { id: 'options', label: 'OPTIONEN', h: ROW_H },
     ];
-    this.index = 0;
-    this.mode = 'menu';
   }
 
   private updateMenu(g: GameContext): void {
@@ -134,7 +138,14 @@ class TitleScene implements Scene {
   /** Runs a menu action. Resolves true if the title stays active (back to the menu). */
   private async choose(g: GameContext, id: EntryId): Promise<boolean> {
     if (id === 'options') {
+      const before = g.state;
       await openOptions(g);
+      if (g.state !== before) {
+        // a save was imported (and loaded): offer it right away
+        this.hasSave = true;
+        this.buildMenu();
+        this.index = 0;
+      }
       return true;
     }
     if (id === 'continue') {
