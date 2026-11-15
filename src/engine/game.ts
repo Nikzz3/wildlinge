@@ -194,6 +194,21 @@ export class Game implements GameContext {
     return true;
   }
 
+  exportSave(): string | null {
+    return this.storage.raw();
+  }
+
+  importSave(data: SaveData): boolean {
+    const prev = this.state;
+    this.state = data;
+    if (!this.write()) {
+      this.state = prev;
+      return false;
+    }
+    this.applyOptions();
+    return true;
+  }
+
   applyOptions(): void {
     this.audio.setVolumes(this.state.options.musicVolume, this.state.options.sfxVolume);
   }

@@ -88,6 +88,12 @@ Die Desktop-App legt den Spielstand als `save.json` im Benutzerdatenordner ab:
 - Windows: `%APPDATA%\wildlinge\save.json`
 - Linux: `~/.config/wildlinge/save.json`
 
+Um auf einem anderen Computer weiterzuspielen: *OPTIONEN → SPIELSTAND ÜBERTRAGEN → Exportieren* speichert
+den zuletzt gespeicherten Spielstand als `wildlinge-spielstand.json`. Auf dem anderen Computer die Datei im
+Titelbild unter *OPTIONEN → SPIELSTAND ÜBERTRAGEN → Importieren* auswählen (ersetzt den dortigen Spielstand
+nach einer Rückfrage), danach geht es mit *Weiter* weiter. Das klappt zwischen Desktop-App und Browser in
+beide Richtungen.
+
 ## Entwicklung und Tests
 
 Jeder Pull Request durchläuft `.github/workflows/ci.yml` (dieselben Checks laufen vor jeder Release):

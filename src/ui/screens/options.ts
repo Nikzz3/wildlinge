@@ -1,25 +1,30 @@
-/** Options: text speed, music / sfx volume, battle animations. Changes apply live and are stored in state.options. */
+/**
+ * Options: text speed, music / sfx volume, battle animations (live, stored in state.options),
+ * and moving the save to another machine.
+ */
 import { icon } from '../../art';
 import type { GameContext, Gfx } from '../../core/contracts';
 import type { Options } from '../../core/types';
 import {
   drawBackdrop, drawHeader, drawRowHighlight, labelText, ListCursor, PAL, promptBox, Screen, shade, text,
 } from './common';
+import { runSaveTransfer } from './transfer';
 
 const SPEEDS: readonly Options['textSpeed'][] = ['slow', 'normal', 'fast'];
 const SPEED_NAMES: Record<Options['textSpeed'], string> = { slow: 'langsam', normal: 'normal', fast: 'schnell' };
 
-type Row = 'speed' | 'music' | 'sfx' | 'anims' | 'back';
+type Row = 'speed' | 'music' | 'sfx' | 'anims' | 'transfer' | 'back';
 const ROWS: readonly { id: Row; label: string; help: string }[] = [
   { id: 'speed', label: 'TEXTTEMPO', help: 'Wie schnell Texte erscheinen.' },
   { id: 'music', label: 'MUSIK', help: 'Lautstärke der Musik.' },
   { id: 'sfx', label: 'EFFEKTE', help: 'Lautstärke der Geräusche.' },
   { id: 'anims', label: 'KAMPFANIMATION', help: 'Attacken im Kampf animieren?' },
+  { id: 'transfer', label: 'SPIELSTAND ÜBERTRAGEN', help: 'Als Datei exportieren / importieren.' },
   { id: 'back', label: 'ZURÜCK', help: 'Zurück zum Menü.' },
 ];
 
-/** Window spans y 24..124, clear of the help box at y 128. */
-const BOX = { x: 6, y: 24, w: 228, rowH: 18 } as const;
+/** Window spans y 21..127, clear of the help box at y 128. */
+const BOX = { x: 6, y: 21, w: 228, rowH: 16 } as const;
 const VALUE_X = 120;
 
 /** Volume 0..1 → 0..10 steps. */
@@ -41,6 +46,7 @@ class OptionsScreen extends Screen {
       if (this.change(g, row, input.repeat('left') ? -1 : 1)) g.audio.playSfx('cursor');
     } else if (input.pressed('a')) {
       if (row === 'back') return this.exit(g);
+      if (row === 'transfer') return this.transfer(g);
       if (this.change(g, row, 1, true)) g.audio.playSfx('cursor');
     } else if (input.pressed('b')) this.exit(g);
   }
@@ -48,6 +54,12 @@ class OptionsScreen extends Screen {
   private exit(g: GameContext): void {
     g.audio.playSfx('cancel');
     this.close();
+  }
+
+  /** Import replaces the save, so it is only offered on the title screen (no game running yet). */
+  private transfer(g: GameContext): void {
+    g.audio.playSfx('confirm');
+    this.run(() => runSaveTransfer(g, g.stack[0]?.name === 'title'));
   }
 
   /** Changes the value of a row by d. `wrap` cycles at the ends (A button). Returns true if something changed. */
@@ -74,6 +86,7 @@ class OptionsScreen extends Screen {
         o.battleAnims = shift(i, 2) === 0;
         return shift(i, 2) !== i;
       }
+      case 'transfer':
       case 'back':
         return false;
     }
@@ -92,7 +105,7 @@ class OptionsScreen extends Screen {
         drawRowHighlight(gfx, x + 3, ry, w - 6, rowH);
         gfx.drawBitmap(icon('cursor'), x + 6, ry + 6);
       }
-      if (row.id === 'back') {
+      if (row.id === 'transfer' || row.id === 'back') {
         text(gfx, row.label, x + 18, ry + 2);
         return;
       }

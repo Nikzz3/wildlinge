@@ -124,6 +124,10 @@ export interface GameContext {
   hasSave(): boolean;
   /** Loads the save into `state`; returns false if none. */
   load(): boolean;
+  /** The stored save as JSON, for copying it to another machine (null if there is none). */
+  exportSave(): string | null;
+  /** Replaces the stored save with an imported one and loads it into `state`. False if writing failed. */
+  importSave(data: SaveData): boolean;
 }
 
 // ---------------------------------------------------------------------------

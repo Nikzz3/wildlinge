@@ -13,6 +13,8 @@ declare global {
 
 export interface Storage {
   read(): SaveData | null;
+  /** The stored save as JSON, exactly as written (null if there is no valid save). */
+  raw(): string | null;
   write(state: SaveData): boolean;
   exists(): boolean;
 }
@@ -40,6 +42,10 @@ export function createStorage(testMode: boolean): Storage {
   };
   return {
     read: () => parse(readRaw()),
+    raw: () => {
+      const json = readRaw();
+      return parse(json) ? json : null;
+    },
     exists: () => parse(readRaw()) !== null,
     write: (state) => {
       const json = JSON.stringify(state);
